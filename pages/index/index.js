@@ -4,6 +4,8 @@ var app = getApp();
 Page({
   data: {
     motto: '欢迎回来哦！',
+    back_title: "后退",
+    for_title: "前进",
     userInfo: {}
   },
   //事件处理函数
@@ -24,4 +26,4 @@ Page({
       console.log(userInfo)
     })
   }
-})
+});
