@@ -1,9 +1,5 @@
 <!--index.wxml-->
 <view class="container"> 
-  <view class="pagination">
-    <navigator url="index" class="back">{{ back_title}}</navigator>
-    <navigator url="test" class="forward">{{for_title }}</navigator>
-  </view>
   <view  bindtap="bindViewTap" class="userinfo">
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
     <text class="userinfo-nickname">NickName：{{userInfo.nickName}}</text>
@@ -14,8 +10,4 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
-  <view>
-    <navigator url="test" hover-class="other-navigator-hover">在当前页打开</navigator>
-  </view>
-  <view class="pani"></view>
 </view>
