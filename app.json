@@ -43,15 +43,23 @@
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
+    "selectedColor" : "#43ce7b",
+    "position": "bottom",
     "list": [{
       "pagePath": "pages/index/index",
-      "text": "首页"
+      "text": "首页",
+      "iconPath": "images/icon/list.png",
+      "selectedIconPath": "images/icon/list_active.png"
     }, {
       "pagePath": "pages/dist/example/index",
-      "text": "UI"
+      "text": "UI",
+      "iconPath": "images/icon/skin.png",
+      "selectedIconPath": "images/icon/skin_active.png"
     }, {
       "pagePath": "pages/sport/index",
-      "text": "微信运动"
+      "text": "运动",
+      "iconPath": "images/icon/footprint.png",
+      "selectedIconPath": "images/icon/footprint_active.png"
       }]
   },
   "debug": true
