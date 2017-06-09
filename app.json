@@ -2,6 +2,7 @@
   "pages":[
     "pages/index/index",
     "pages/logs/logs",
+    "pages/sport/index",
     "pages/dist/example/index",
 
     "pages/dist/example/button/button",
@@ -48,7 +49,10 @@
     }, {
       "pagePath": "pages/dist/example/index",
       "text": "UI"
-    }]
+    }, {
+      "pagePath": "pages/sport/index",
+      "text": "微信运动"
+      }]
   },
   "debug": true
 }

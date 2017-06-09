@@ -3,9 +3,7 @@
 var app = getApp();
 Page({
   data: {
-    motto: '欢迎回来哦！',
-    back_title: "后退",
-    for_title: "前进",
+    motto: '欢迎回来！',
     userInfo: {}
   },
   //事件处理函数
@@ -23,7 +21,6 @@ Page({
       that.setData({
         userInfo:userInfo
       });
-      console.log(userInfo)
     })
   }
 });
