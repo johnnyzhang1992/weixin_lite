@@ -79,6 +79,13 @@ App({
           });
       }
   },
+  formatTime: function (time) {
+      var unixTimestamp = new Date( time * 1000);
+      var year = unixTimestamp.getFullYear();
+      var month = unixTimestamp.getMonth()+1;
+      var date = unixTimestamp.getDate();
+      return [year,month,date].join('/');
+  },
   globalData:{
       userInfo: null,
       runData: null

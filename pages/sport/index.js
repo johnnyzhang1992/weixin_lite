@@ -31,11 +31,7 @@ Page({
             var stepInfoList = runData;
             var _data = [];
             for(var i =0;i<stepInfoList.length;i++){
-                var unixTimestamp = new Date( stepInfoList[i].timestamp * 1000);
-                var year = unixTimestamp.getFullYear();
-                var month = unixTimestamp.getMonth()+1;
-                var date = unixTimestamp.getDate();
-                var _time = [year,month,date].join('/');
+                var _time = app.formatTime(stepInfoList[i].timestamp);
                 var _step = stepInfoList[i].step;
                 var _obj = {};
                 _obj.time = _time;
