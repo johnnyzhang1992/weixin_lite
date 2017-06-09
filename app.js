@@ -7,6 +7,7 @@ App({
     wx.setStorageSync('logs', logs)
   },
   getUserInfo:function(cb){
+      //获取授权用户基本数据
     var that = this;
     if(this.globalData.userInfo){
       typeof cb == "function" && cb(this.globalData.userInfo)
@@ -20,6 +21,7 @@ App({
                       that.globalData.userInfo = resp.userInfo;
                       typeof cb == "function" && cb(that.globalData.userInfo);
                       wx.setStorageSync('userInfo',resp.userInfo);
+                      // 向关联网站发送请求，解密、存储数据
                       wx.request({
                           url: 'https://johnnyzhang.cn/wxxcx/userinfo',
                           data: {
@@ -42,6 +44,7 @@ App({
     }
   },
   getRunData: function (cb) {
+      // 获取授权用户的微信运动数据
       var that = this;
       if(this.globalData.runData){
           typeof cb == "function" && cb(this.globalData.runData)
@@ -52,6 +55,7 @@ App({
                   var code = response.code;
                   wx.getWeRunData({
                       success:function(res) {
+                          // 向关联网站发送请求，解密、存储数据
                           wx.request({
                               url: 'https://johnnyzhang.cn/wxxcx/rundata',
                               data: {
@@ -60,21 +64,15 @@ App({
                                   encryptedData: res.encryptedData
                               },
                               success: function (resp) {
-                                  if(resp){
+                                  if (resp) {
                                       that.globalData.runData = resp.data.stepInfoList;
                                       typeof cb == "function" && cb(that.globalData.runData);
                                       console.log('---------RunData----------------');
                                       console.log('statusaCode:' + resp.statusCode);
                                       // console.log(resp.data.stepInfoList);
-                                      // var stepInfoList = resp.data.stepInfoList;
-                                      // for(var i =0;i<stepInfoList.length;i++){
-                                      //     var unixTimestamp = new Date( stepInfoList[i].timestamp * 1000);
-                                      //     console.log('时间：'+unixTimestamp.toLocaleString()+'；步数:'+stepInfoList[i].step);
-                                      // }
                                   }
                               }
                           });
-
                       }
                   })
               }
