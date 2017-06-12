@@ -34,4 +34,9 @@
   text-align: right;
   padding-right: 2%
 }
-
+.userinfo-nickname{
+  text-align: center;
+}
+.page__hd{
+  padding: 20px 40px;
+}

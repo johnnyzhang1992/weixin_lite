@@ -30,10 +30,11 @@ App({
                               encryptedData: resp.encryptedData
                           },
                           success: function (res) {
+                              console.log(res);
                               if(res.data){
-                                  console.log('---------UserInfo----------------');
+                                  console.log('---------UserInfo----success------------');
                                   console.log('statusaCode:' + res.statusCode);
-                                  console.log('success!');
+                                  // wx.setStorageSync('userId',res.data);
                               }
                           }
                       })
@@ -61,13 +62,14 @@ App({
                               data: {
                                   code: code,
                                   iv: res.iv,
-                                  encryptedData: res.encryptedData
+                                  encryptedData: res.encryptedData,
+                                  id: wx.getStorageSync('userId')
                               },
                               success: function (resp) {
                                   if (resp) {
                                       that.globalData.runData = resp.data.stepInfoList;
                                       typeof cb == "function" && cb(that.globalData.runData);
-                                      console.log('---------RunData----------------');
+                                      console.log('---------RunData----success------------');
                                       console.log('statusaCode:' + resp.statusCode);
                                       // console.log(resp.data.stepInfoList);
                                   }
