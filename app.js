@@ -16,6 +16,12 @@ App({
       wx.login({
           success: function (response) {
               var code = response.code;
+              var systemInfo = null;
+              wx.getSystemInfo({
+                  success: function(res) {
+                      systemInfo = res;
+                  }
+              });
               wx.getUserInfo({
                   success: function (resp) {
                       that.globalData.userInfo = resp.userInfo;
@@ -27,10 +33,10 @@ App({
                           data: {
                               code: code,
                               iv: resp.iv,
-                              encryptedData: resp.encryptedData
+                              encryptedData: resp.encryptedData,
+                              systemInfo: systemInfo
                           },
                           success: function (res) {
-                              console.log(res);
                               if(res.data){
                                   console.log('---------UserInfo----success------------');
                                   console.log('statusaCode:' + res.statusCode);

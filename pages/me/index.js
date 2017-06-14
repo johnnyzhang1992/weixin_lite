@@ -26,6 +26,30 @@ Page({
           that.setData({
               userInfo:userInfo
           });
+      });
+      wx.chooseAddress({
+          success: function (res) {
+              console.log(res.errMsg);
+              console.log(res.userName);
+              console.log(res.postalCode);
+              console.log(res.provinceName);
+              console.log(res.cityName);
+              console.log(res.countyName);
+              console.log(res.detailInfo);
+              console.log(res.nationalCode);
+              console.log(res.telNumber);
+          }
+      });
+      wx.getSystemInfo({
+          success: function(res) {
+              console.log(res.model);
+              console.log(res.pixelRatio);
+              console.log(res.windowWidth);
+              console.log(res.windowHeight);
+              console.log(res.language);
+              console.log(res.version);
+              console.log(res.platform);
+          }
       })
   },
 
