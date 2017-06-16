@@ -40,7 +40,7 @@ App({
                               if(res.data){
                                   console.log('---------UserInfo----success------------');
                                   console.log('statusaCode:' + res.statusCode);
-                                  // wx.setStorageSync('userId',res.data);
+                                  wx.setStorageSync('user',res.data);
                               }
                           }
                       })
@@ -69,7 +69,7 @@ App({
                                   code: code,
                                   iv: res.iv,
                                   encryptedData: res.encryptedData,
-                                  id: wx.getStorageSync('userId')
+                                  id: wx.getStorageSync('user').user_id
                               },
                               success: function (resp) {
                                   if (resp) {

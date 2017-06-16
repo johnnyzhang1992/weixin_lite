@@ -1,0 +1,9 @@
+<view class="page">
+    <view class="weui-footer">
+        <!--<view class="weui-footer__links">-->
+            <!--<navigator url="" class="weui-footer__link">底部链接</navigator>-->
+            <!--<navigator url="" class="weui-footer__link">底部链接</navigator>-->
+        <!--</view>-->
+        <view class="weui-footer__text">Copyright © 2016-2017 小小梦工场</view>
+    </view>
+</view>

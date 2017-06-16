@@ -29,3 +29,5 @@
         </view>
     </view>
 </view>
+<!-- 引入footer -->
+<include src="footer.wxml"/>

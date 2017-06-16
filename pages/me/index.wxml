@@ -8,15 +8,15 @@
                     <image class="me-avatar" src="{{userInfo.avatarUrl}}"></image>
                 </view>
             </navigator>
-            <navigator url="pages/more" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <navigator url="pages/name/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                 <view class="weui-cell__bd">名字</view>
-                <view class="weui-cell__ft weui-cell__ft_in-access" style="min-width:48px">{{userInfo.nickName}}</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access" style="min-width:48px">{{name}}</view>
             </navigator>
-            <navigator url="pages/more" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <navigator url="#" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                 <view class="weui-cell__bd">语言</view>
                 <view class="weui-cell__ft weui-cell__ft_in-access" style="min-width:48px">{{userInfo.language}}</view>
             </navigator>
-            <navigator url="pages/more" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <navigator url="pages/mame/address" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                 <view class="weui-cell__bd">我的地址</view>
                 <view class="weui-cell__ft weui-cell__ft_in-access" style="min-width:48px"></view>
             </navigator>
@@ -43,3 +43,5 @@
         </view>
     </view>
 </view>
+<!-- 引入footer -->
+<include src="footer.wxml"/>

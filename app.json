@@ -1,13 +1,11 @@
 {
   "pages": [
+    "pages/me/index",
     "pages/sport/index",
     "pages/sport/pages/more",
-
     "pages/index/index",
     "pages/logs/logs",
-    "pages/me/index",
     "pages/dist/example/index",
-
     "pages/dist/example/button/button",
     "pages/dist/example/list/list",
     "pages/dist/example/input/input",
@@ -33,7 +31,9 @@
     "pages/dist/example/toast/toast",
     "pages/dist/example/navbar/navbar",
     "pages/dist/example/tabbar/tabbar",
-    "pages/dist/example/searchbar/searchbar"
+    "pages/dist/example/searchbar/searchbar",
+    "pages/me/pages/name/index",
+    "pages/me/pages/address/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
