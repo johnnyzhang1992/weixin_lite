@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">个性签名</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input  class="weui-input" bindchange="bindChange" placeholder="{{signature}}" value="{{ signature }}"/>
+        </view>
+    </view>
+    <view class="page__bd page__bd_spacing" style="padding-top:15px">
+        <button id="signatureSave" type="default" bindtap="saveSignature" class="weui-btn">保存</button>
+    </view>
+</view>

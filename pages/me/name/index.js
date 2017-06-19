@@ -31,8 +31,6 @@ Page({
     saveName: function () {
         var new_name = inputContent['nickName'];
         var old_name = wx.getStorageSync('user').user_name;
-        console.log(old_name);
-        console.log(new_name);
         if(old_name == new_name || new_name == undefined){
             wx.showModal({
                 title: '你没有做修改哦',
@@ -50,6 +48,9 @@ Page({
                 },
                 success: function (resp) {
                     if (resp.data == 'success') {
+                        var user = wx.getStorageSync('user');
+                        user.user_name = new_name;
+                        wx.setStorageSync('user',user);
                         wx.showModal({
                             title: '保存成功',
                             showCancel: false,

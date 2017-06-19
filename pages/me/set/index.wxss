@@ -1,4 +1,4 @@
-/* index.wxss */
+/**index.wxss**/
 .userinfo {
     display: flex;
     flex-direction: column;
@@ -6,8 +6,8 @@
 }
 
 .userinfo-avatar {
-    width: 108rpx;
-    height: 108rpx;
+    width: 128rpx;
+    height: 128rpx;
     margin: 20rpx;
     border-radius: 50%;
 }
@@ -37,26 +37,10 @@
 .me-avatar{
     margin-right: 5px;
     vertical-align: middle;
-    width:108rpx;
-    height: 108rpx;
+    width:80px;
+    height: 80px;
     border-radius:10px
 }
 .page{
     padding-top: 20px;
-}
-.view-avatar{
-    max-width:150rpx
-}
-.name{
-    position: relative;
-    height:128rpx;
-}
-.name .text{
-    position:absolute;
-    top:12%;
-}
-.name .text1{
-    position:absolute;
-    bottom:8%;
-
 }

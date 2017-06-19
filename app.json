@@ -1,8 +1,12 @@
 {
   "pages": [
     "pages/me/index",
-    "pages/sport/index",
-    "pages/sport/pages/more",
+    "pages/me/set/index",
+    "pages/me/name/index",
+    "pages/me/address/index",
+    "pages/me/signature/index",
+    "pages/me/sport/index",
+    "pages/me/sport/pages/more",
     "pages/index/index",
     "pages/logs/logs",
     "pages/dist/example/index",
@@ -31,9 +35,7 @@
     "pages/dist/example/toast/toast",
     "pages/dist/example/navbar/navbar",
     "pages/dist/example/tabbar/tabbar",
-    "pages/dist/example/searchbar/searchbar",
-    "pages/me/pages/name/index",
-    "pages/me/pages/address/index"
+    "pages/dist/example/searchbar/searchbar"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -46,10 +48,10 @@
     "position": "bottom",
     "list": [
       {
-        "pagePath": "pages/sport/index",
-        "text": "运动",
-        "iconPath": "images/icon/footprint.png",
-        "selectedIconPath": "images/icon/footprint_active.png"
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/icon/list.png",
+        "selectedIconPath": "images/icon/list_active.png"
       },
       {
         "pagePath": "pages/dist/example/index",
