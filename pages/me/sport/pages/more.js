@@ -17,6 +17,9 @@ Page({
         })
     },
     onLoad: function () {
+        wx.setNavigationBarTitle({
+            title: '微信运动'
+        });
         wx.showLoading({
             title: '页面加载中...',
             mask: true

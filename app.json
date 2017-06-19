@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/me/index",
     "pages/me/set/index",
     "pages/me/name/index",
@@ -7,7 +8,6 @@
     "pages/me/signature/index",
     "pages/me/sport/index",
     "pages/me/sport/pages/more",
-    "pages/index/index",
     "pages/logs/logs",
     "pages/dist/example/index",
     "pages/dist/example/button/button",

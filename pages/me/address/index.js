@@ -31,9 +31,6 @@ Page({
               info: '更新地址'
           })
       }
-      that.setData({
-          address: wx.getStorageSync('location')
-      })
   },
     saveAddress: function () {
         var new_address = inputContent['address'];
@@ -48,9 +45,9 @@ Page({
                 },
                 success: function (resp) {
                     if (resp.data == 'success') {
-                        var user = wx.getStorageSync('user');
-                        user.address = _address;
-                        wx.setStorageSync('user',user);
+                        var address = wx.getStorageSync('location');
+                        address.address = new_address;
+                        wx.setStorageSync('location',address);
                         wx.showModal({
                             title: '保存成功',
                             showCancel: false,
