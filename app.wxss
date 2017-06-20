@@ -46,3 +46,13 @@ page{
     text-align: left;
     font-size: 14px;
 }
+.page{
+    padding-top:10px;
+}
+.book_cover_image{
+    text-align: center;
+}
+.book_cover_image image{
+    width:220rpx;
+    height:328rpx;
+}

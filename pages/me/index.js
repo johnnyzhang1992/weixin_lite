@@ -9,7 +9,8 @@ Page({
       userInfo: {},
       dayData: {},
       icon: '../../images/icon/footprint_active.png',
-      signature : wx.getStorageSync('user').signature
+      signature : wx.getStorageSync('user').signature,
+      book: ''
   },
 
   /**
@@ -43,6 +44,19 @@ Page({
           that.setData({
               dayData: _dayData
           });
+      });
+      wx.request({
+          url: 'https://johnnyzhang.cn/wxxcx/get/book',
+          data: {
+              id : wx.getStorageSync('user').user_id
+          },
+          success: function (res) {
+              if(res.data){
+                  that.setData({
+                      book: res.data.length
+                  })
+              }
+          }
       })
   },
 

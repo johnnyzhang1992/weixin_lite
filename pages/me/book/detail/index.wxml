@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<view class="page">
+    <view class="page__hd">
+        <view class="weui-article__p book_cover_image">
+            <image class="weui-article__img" src="{{ d_book.image}}" mode="aspectFit" />
+        </view>
+        <view class="page__title">{{ book.book_name }}</view>
+        <view class="page__desc">{{ d_book.author[0]}}</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-article">
+            <!--<view class="weui-article__h1">大标题</view>-->
+            <view class="weui-article__section">
+                <!--<view class="weui-article__title">章标题</view>-->
+                <view class="weui-article__section">
+                    <view class="weui-article__h3" style="border-bottom:1px solid #ddd">作者介绍</view>
+                    <view class="weui-article__p">
+                        {{ d_book.author_intro}}
+                    </view>
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3" style="border-bottom:1px solid #ddd">作品介绍</view>
+                    <view class="weui-article__p">
+                        {{ d_book.summary}}
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

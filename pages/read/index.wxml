@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view class="page">
+    <view class="page__bd">
+        <!--<view class="weui-cells__title">阅读列表：</view>-->
+        <!--<view class="weui-cells weui-cells_after-title">-->
+            <!--<navigator url="../name/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">-->
+                <!--<view class="weui-cell__bd"></view>-->
+                <!--<view class="weui-cell__ft weui-cell__ft_in-access" style="min-width:48px">{{item.book_author}}</view>-->
+            <!--</navigator>-->
+        <!--</view>-->
+        <view class="weui-panel">
+            <view class="weui-panel__hd">推荐列表</view>
+            <view class="weui-panel__bd">
+                <view class="weui-media-box weui-media-box_text" wx:for="{{book}}" wx:key="id">
+                    <view class="weui-media-box__title weui-media-box__title_in-text">
+                        <navigator url="detail/index?id={{ item.id}}" hover-class="navigator-hover">
+                            {{ item.book_name}}
+                        </navigator>
+                      </view>
+                    <view class="weui-media-box__desc" wx:if="{{ item.content == NULL}}">暂无简介</view>
+                    <view class="weui-media-box__desc" wx:elif="{{ item.content}}">{{ item.content}}</view>
+                    <view class="weui-media-box__info" >
+                        <view class="weui-media-box__info__meta">{{ item.book_author}}</view>
+                        <view class="weui-media-box__info__meta">{{ item.year}}</view>
+                        <view class="weui-media-box__info__meta weui-media-box__info__meta_extra" wx:if="{{ item.status == 'finish'}}">已读完</view>
+                        <view class="weui-media-box__info__meta weui-media-box__info__meta_extra" wx:elif="{{ item.status !== 'finish'}}">进行中</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
