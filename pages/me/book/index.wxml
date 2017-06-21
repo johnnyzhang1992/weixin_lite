@@ -9,7 +9,7 @@
         <!--</navigator>-->
         <!--</view>-->
         <view class="weui-panel">
-            <view class="weui-panel__hd">推荐列表</view>
+            <view class="weui-panel__hd">已读列表</view>
             <view class="weui-panel__bd">
                 <view class="weui-media-box weui-media-box_text" wx:for="{{book}}" wx:key="id">
                     <view class="weui-media-box__title weui-media-box__title_in-text">

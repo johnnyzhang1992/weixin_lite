@@ -1,5 +1,6 @@
 {
     "pages": [
+        "pages/me/book/new/index",
         "pages/me/index",
         "pages/read/index",
         "pages/index/index",
@@ -39,7 +40,7 @@
         "pages/dist/example/searchbar/searchbar",
         "pages/read/detail/index",
         "pages/me/book/detail/index",
-        "pages/me/book/new/index",
+
         "pages/me/book/index"
     ],
     "window": {

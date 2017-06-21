@@ -60,16 +60,6 @@ Page({
                           console.info('获取豆瓣图书内容失败！');
                       }
                   });
-                  // 搜索数据相关内容
-                  // wx.request({
-                  //     url: "https://api.douban.com/v2/book/search",
-                  //     data:{
-                  //         q: '摆渡人'
-                  //     },
-                  //     success: function (re) {
-                  //         console.log(re.data)
-                  //     }
-                  // });
                   that.setData({
                       book: book
                   })
