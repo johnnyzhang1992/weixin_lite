@@ -95,7 +95,34 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+      var that = this;
+      // 下拉刷新数据
+      app.getRunData(function (runData) {
+          //更新数据
+          var stepInfoList = runData;
+          // 当天的数据
+          var _dayData = {};
+          _dayData.time = app.formatTime(stepInfoList[stepInfoList.length-1].timestamp);
+          _dayData.step = stepInfoList[stepInfoList.length-1].step;
+          // console.log(_data);
+          that.setData({
+              dayData: _dayData
+          });
+      });
+      wx.request({
+          url: 'https://johnnyzhang.cn/wxxcx/get/book',
+          data: {
+              id : wx.getStorageSync('user').user_id
+          },
+          success: function (res) {
+              if(res.data){
+                  that.setData({
+                      book: res.data.length
+                  });
+                  wx.stopPullDownRefresh()
+              }
+          }
+      })
   },
 
   /**

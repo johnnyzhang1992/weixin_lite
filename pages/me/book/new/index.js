@@ -1,6 +1,8 @@
 // index.js
 var app = getApp();
-var inputVal = '';
+var _inputVal = '';
+var _books = {};
+var _book = {};
 Page({
 
   /**
@@ -9,7 +11,10 @@ Page({
     data: {
       inputShowed: false,
       inputVal: "",
-      books: []
+      books: [],
+      searchResult: false,
+      book:{},
+      showDetail: false
     },
     showInput: function () {
         this.setData({
@@ -19,7 +24,8 @@ Page({
     hideInput: function () {
         this.setData({
             inputVal: "",
-            inputShowed: false
+            inputShowed: false,
+            searchResult: false
         });
     },
     clearInput: function () {
@@ -28,7 +34,7 @@ Page({
         });
     },
     inputTyping: function (e) {
-        inputVal = e.detail.value;
+        _inputVal = e.detail.value;
         this.setData({
             inputVal: e.detail.value
         });
@@ -39,17 +45,54 @@ Page({
         wx.request({
             url: "https://api.douban.com/v2/book/search",
             data:{
-                q: inputVal,
+                q: _inputVal,
                 start:0,
                 count:10
             },
             success: function (re) {
-                console.log(re.data);
+                _books = re.data.books;
                 that.setData({
-                    books: re.data.books
+                    books: re.data.books,
+                    searchResult: true
                 })
             }
         });
+    },
+    choseOne: function (e) {
+        var id = e.currentTarget.id;
+        _book = _books[id];
+        this.setData({
+            searchResult: false,
+            showDetail:true,
+            book: _books[id]
+        })
+    },
+    saveBook: function () {
+        if(_book){
+            wx.request({
+                url: 'https://johnnyzhang.cn/wxxcx/save/book',
+                data: {
+                    book_name: _book.title,
+                    book_author: _book.author[0],
+                    douban_id: _book.id,
+                    cover_image:_book.image,
+                    content: _book.summary,
+                    id: wx.getStorageSync('user').user_id
+                },
+                success: function (resp) {
+                    if (resp.data == 'success') {
+                        wx.showModal({
+                            title: '保存成功',
+                            showCancel: false,
+                            confirmText: '我知道了',
+                            success: function (res) {
+                                if (res.confirm) {}
+                            }
+                        });
+                    }
+                }
+            });
+        }
     },
   /**
    * 生命周期函数--监听页面加载
