@@ -54,13 +54,10 @@ Page({
                         var user = wx.getStorageSync('user');
                         user.user_name = new_name;
                         wx.setStorageSync('user',user);
-                        wx.showModal({
-                            title: '保存成功',
-                            showCancel: false,
-                            confirmText: '我知道了',
-                            success: function (res) {
-                                if (res.confirm) {}
-                            }
+                        wx.showToast({
+                            title: '已完成',
+                            icon: 'success',
+                            duration: 3000
                         });
                     }
                 }

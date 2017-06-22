@@ -1,8 +1,8 @@
 {
     "pages": [
+        "pages/index/index",
         "pages/me/index",
         "pages/read/index",
-        "pages/index/index",
         "pages/me/set/index",
         "pages/me/name/index",
         "pages/me/address/index",
