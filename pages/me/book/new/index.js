@@ -44,6 +44,7 @@ Page({
         // 搜索数据相关内容
         wx.request({
             url: "https://api.douban.com/v2/book/search",
+            header: { 'Content-Type': 'json' },
             data:{
                 q: _inputVal,
                 start:0,
@@ -71,7 +72,6 @@ Page({
         if(_book){
             wx.request({
                 url: 'https://johnnyzhang.cn/wxxcx/save/book',
-                header: { 'Content-Type': 'json' },
                 data: {
                     book_name: _book.title,
                     book_author: _book.author[0],

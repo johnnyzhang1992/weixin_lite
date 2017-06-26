@@ -11,6 +11,10 @@
     "pages/me/sport/index",
     "pages/me/sport/pages/more",
     "pages/logs/logs",
+    "pages/read/detail/index",
+    "pages/me/book/detail/index",
+    "pages/me/book/new/index",
+    "pages/me/book/index",
     "pages/dist/example/index",
     "pages/dist/example/button/button",
     "pages/dist/example/list/list",
@@ -38,10 +42,10 @@
     "pages/dist/example/navbar/navbar",
     "pages/dist/example/tabbar/tabbar",
     "pages/dist/example/searchbar/searchbar",
-    "pages/read/detail/index",
-    "pages/me/book/detail/index",
-    "pages/me/book/new/index",
-    "pages/me/book/index"
+    "pages/record/pois/detail/index",
+    "pages/record/pois/new/index",
+    "pages/record/posts/detail/index",
+    "pages/record/posts/new/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -57,8 +61,8 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "images/icon/list.png",
-        "selectedIconPath": "images/icon/list_active.png"
+        "iconPath": "images/icon/apps.png",
+        "selectedIconPath": "images/icon/apps_active.png"
       },
       {
         "pagePath": "pages/read/index",

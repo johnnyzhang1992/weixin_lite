@@ -1,0 +1,36 @@
+<!--index.wxml-->
+<view class="page">
+    <view class="page__hd">
+        <view class="weui-article__p poi_cover_image" wx:if ="{{ poi.cover_image}}">
+            <image class="weui-article__img" src="{{ poi.cover_image}}" mode="aspectFit" />
+        </view>
+        <view class="weui-article__p poi_cover_image" wx:elif ="{{ !poi.cover_image}}">
+            <image class="weui-article__img" src="../../../../images/poi_cover.jpg" mode="aspectFit" />
+        </view>
+        <view class="page__title">{{ poi.poi_name }}</view>
+        <view class="page__desc">{{ poi.user_name}}</view>
+        <view class="page__desc poi_address" data-lat="{{ poi.lat}}" data-lng="{{poi.lng}}" data-name="{{ poi.poi_name}}" data-address="{{poi.address}}" bindtap="findLocation">
+            <image class="poi_icon" src="../../../../images/icon/location_light_active.png" mode="aspectFit"/>{{ poi.address}}
+        </view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-article">
+            <!--<view class="weui-article__h1">大标题</view>-->
+            <view class="weui-article__section">
+                <!--<view class="weui-article__title">章标题</view>-->
+                <view class="weui-article__section">
+                    <view class="weui-article__h3" style="border-bottom:1px solid #ddd">介绍</view>
+                    <view class="weui-article__p" wx:if="{{ poi.description }}">
+                        <text>
+                            {{ poi.description }}
+                        </text>
+                    </view>
+                    <view class="weui-article__p" wx:elif="{{ !poi.description }}">
+                        无内容
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+

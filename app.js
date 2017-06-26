@@ -181,7 +181,6 @@ App({
             return Y + '-' + M + '-' + D + ' ' + H + ':' + m;
         }
     },
-
     globalData:{
         userInfo: null,
         runData: null

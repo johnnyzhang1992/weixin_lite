@@ -1,0 +1,7 @@
+/* index.wxss */
+.weui-flex__item .placeholder{
+    text-align: center;
+}
+.page{
+    padding-top: 0;
+}

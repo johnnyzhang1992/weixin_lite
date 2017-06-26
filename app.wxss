@@ -56,3 +56,8 @@ page{
     width:220rpx;
     height:328rpx;
 }
+.weui-badge {
+    padding: .25em .5em;
+    min-width: 15px;
+    background-color: #43ce7b;
+}
