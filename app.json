@@ -1,83 +1,90 @@
 {
-    "pages": [
-        "pages/index/index",
-        "pages/me/index",
-        "pages/read/index",
-        "pages/me/set/index",
-        "pages/me/name/index",
-        "pages/me/address/index",
-        "pages/me/signature/index",
-        "pages/me/sport/index",
-        "pages/me/sport/pages/more",
-        "pages/logs/logs",
-        "pages/dist/example/index",
-        "pages/dist/example/button/button",
-        "pages/dist/example/list/list",
-        "pages/dist/example/input/input",
-        "pages/dist/example/slider/slider",
-        "pages/dist/example/uploader/uploader",
-        "pages/dist/example/article/article",
-        "pages/dist/example/badge/badge",
-        "pages/dist/example/flex/flex",
-        "pages/dist/example/footer/footer",
-        "pages/dist/example/gallery/gallery",
-        "pages/dist/example/grid/grid",
-        "pages/dist/example/icons/icons",
-        "pages/dist/example/loadmore/loadmore",
-        "pages/dist/example/panel/panel",
-        "pages/dist/example/preview/preview",
-        "pages/dist/example/progress/progress",
-        "pages/dist/example/actionsheet/actionsheet",
-        "pages/dist/example/dialog/dialog",
-        "pages/dist/example/msg/msg",
-        "pages/dist/example/msg/msg_success",
-        "pages/dist/example/msg/msg_fail",
-        "pages/dist/example/picker/picker",
-        "pages/dist/example/toast/toast",
-        "pages/dist/example/navbar/navbar",
-        "pages/dist/example/tabbar/tabbar",
-        "pages/dist/example/searchbar/searchbar",
-        "pages/read/detail/index",
-        "pages/me/book/detail/index",
-        "pages/me/book/new/index",
-        "pages/me/book/index"
-    ],
-    "window": {
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#000",
-        "navigationBarTitleText": "小小梦工场",
-        "navigationBarTextStyle": "#fff",
-        "enablePullDownRefresh": true
-    },
-    "tabBar": {
-        "selectedColor": "#43ce7b",
-        "position": "bottom",
-        "list": [
-            {
-                "pagePath": "pages/index/index",
-                "text": "首页",
-                "iconPath": "images/icon/list.png",
-                "selectedIconPath": "images/icon/list_active.png"
-            },
-            {
-                "pagePath": "pages/read/index",
-                "text": "阅读",
-                "iconPath": "images/icon/read.png",
-                "selectedIconPath": "images/icon/read_active.png"
-            },
-            {
-                "pagePath": "pages/dist/example/index",
-                "text": "UI",
-                "iconPath": "images/icon/skin.png",
-                "selectedIconPath": "images/icon/skin_active.png"
-            },
-            {
-                "pagePath": "pages/me/index",
-                "text": "我",
-                "iconPath": "images/icon/people.png",
-                "selectedIconPath": "images/icon/people_active.png"
-            }
-        ]
-    },
-    "debug": true
+  "pages": [
+    "pages/record/index",
+    "pages/index/index",
+    "pages/me/index",
+    "pages/read/index",
+    "pages/me/set/index",
+    "pages/me/name/index",
+    "pages/me/address/index",
+    "pages/me/signature/index",
+    "pages/me/sport/index",
+    "pages/me/sport/pages/more",
+    "pages/logs/logs",
+    "pages/dist/example/index",
+    "pages/dist/example/button/button",
+    "pages/dist/example/list/list",
+    "pages/dist/example/input/input",
+    "pages/dist/example/slider/slider",
+    "pages/dist/example/uploader/uploader",
+    "pages/dist/example/article/article",
+    "pages/dist/example/badge/badge",
+    "pages/dist/example/flex/flex",
+    "pages/dist/example/footer/footer",
+    "pages/dist/example/gallery/gallery",
+    "pages/dist/example/grid/grid",
+    "pages/dist/example/icons/icons",
+    "pages/dist/example/loadmore/loadmore",
+    "pages/dist/example/panel/panel",
+    "pages/dist/example/preview/preview",
+    "pages/dist/example/progress/progress",
+    "pages/dist/example/actionsheet/actionsheet",
+    "pages/dist/example/dialog/dialog",
+    "pages/dist/example/msg/msg",
+    "pages/dist/example/msg/msg_success",
+    "pages/dist/example/msg/msg_fail",
+    "pages/dist/example/picker/picker",
+    "pages/dist/example/toast/toast",
+    "pages/dist/example/navbar/navbar",
+    "pages/dist/example/tabbar/tabbar",
+    "pages/dist/example/searchbar/searchbar",
+    "pages/read/detail/index",
+    "pages/me/book/detail/index",
+    "pages/me/book/new/index",
+    "pages/me/book/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "小小梦工场",
+    "navigationBarTextStyle": "#fff",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "selectedColor": "#43ce7b",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/icon/list.png",
+        "selectedIconPath": "images/icon/list_active.png"
+      },
+      {
+        "pagePath": "pages/read/index",
+        "text": "阅读",
+        "iconPath": "images/icon/read.png",
+        "selectedIconPath": "images/icon/read_active.png"
+      },
+      {
+        "pagePath": "pages/record/index",
+        "text": "记事",
+        "iconPath": "images/icon/edit_light.png",
+        "selectedIconPath": "images/icon/edit_light_active.png"
+      },
+      {
+        "pagePath": "pages/dist/example/index",
+        "text": "UI",
+        "iconPath": "images/icon/skin.png",
+        "selectedIconPath": "images/icon/skin_active.png"
+      },
+      {
+        "pagePath": "pages/me/index",
+        "text": "我",
+        "iconPath": "images/icon/people.png",
+        "selectedIconPath": "images/icon/people_active.png"
+      }
+    ]
+  },
+  "debug": true
 }

@@ -71,6 +71,7 @@ Page({
         if(_book){
             wx.request({
                 url: 'https://johnnyzhang.cn/wxxcx/save/book',
+                header: { 'Content-Type': 'json' },
                 data: {
                     book_name: _book.title,
                     book_author: _book.author[0],

@@ -1,4 +1,5 @@
 // index.js
+var app = getApp();
 Page({
 
   /**
@@ -31,45 +32,23 @@ Page({
           success: function (res) {
               if(res.data){
                   var book = res.data[0];
-                  console.log(book);
                   wx.setNavigationBarTitle({
                       title: book.book_name
                   });
                   wx.request({
                       url: "https://api.douban.com/v2/book/"+book.douban_id,
+                      method: 'GET',
+                      header: { 'Content-Type': 'json' },
                       success: function(resp){
-                          console.log(resp.data);
+                          console.log(resp);
                           that.setData({
                               d_book: resp.data
                           })
-                          // $('#cover_image').attr('src',data.image);
-                          // $('.book-author').html(data.author);
-                          // $('.book-douban-url').attr('href',data.alt);
-                          // $('.origin-title').html(data.origin_title);
-                          // $('.book-pages').html(data.pages);
-                          // $('.book-isbn').html(data.isbn13);
-                          // $('.book-publisher').html(data.publisher);
-                          // $('.book-pubdate').html(data.pubdate);
-                          // $('.book-translator').html(data.translator);
-                          // $('.book-douban-rating').html(data.rating.average);
-                          // $('#author_intro').html(data.author_intro);
-                          // $('#book-summary').html(data.summary);
-                          // console.info(JSON.stringify("alt_title:"+data.alt_title));
                       },
                       fail: function (xhr,status,error) {
                           console.info('获取豆瓣图书内容失败！');
                       }
                   });
-                  // 搜索数据相关内容
-                  // wx.request({
-                  //     url: "https://api.douban.com/v2/book/search",
-                  //     data:{
-                  //         q: '摆渡人'
-                  //     },
-                  //     success: function (re) {
-                  //         console.log(re.data)
-                  //     }
-                  // });
                   that.setData({
                       book: book
                   })

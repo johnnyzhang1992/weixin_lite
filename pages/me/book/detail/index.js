@@ -36,6 +36,7 @@ Page({
                   });
                   wx.request({
                       url: "https://api.douban.com/v2/book/"+book.douban_id,
+                      header: { 'Content-Type': 'json' },
                       success: function(resp){
                           that.setData({
                               d_book: resp.data
