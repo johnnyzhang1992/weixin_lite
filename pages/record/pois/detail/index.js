@@ -7,7 +7,10 @@ Page({
    */
   data: {
       poi_id: '',
-      poi: {}
+      poi: {},
+      lat:'',
+      lng:'',
+      markers: []
   },
 
   /**
@@ -38,7 +41,15 @@ Page({
                       title: poi.poi_name
                   });
                   that.setData({
-                      poi: poi
+                      poi: poi,
+                      lat:poi.lat,
+                      lng:poi.lng,
+                      markers: [{
+                          latitude: poi.lat,
+                          longitude: poi.lng,
+                          name: poi.poi_name,
+                          desc: poi.address
+                      }]
                   })
               }
           }

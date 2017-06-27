@@ -5,14 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+      category_id: 9,
+      type: 'zaji',
+      status:1
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+
   },
 
   /**
@@ -21,7 +23,29 @@ Page({
   onReady: function () {
   
   },
-
+    bindFormSubmit: function(e) {
+        var content = e.detail.value.content;
+        var title = e.detail.value.title;
+        var des = e.detail.value.description;
+        wx.request({
+            url: 'https://johnnyzhang.cn/wxxcx/save/post',
+            data: {
+                title:title,
+                des: des,
+                content:content ,
+                id: wx.getStorageSync('user').user_id
+            },
+            success: function (resp) {
+                if (resp.data == 'success') {
+                    wx.showToast({
+                        title: '已完成',
+                        icon: 'success',
+                        duration: 3000
+                    });
+                }
+            }
+        });
+    },
   /**
    * 生命周期函数--监听页面显示
    */
