@@ -7,7 +7,8 @@ Page({
    */
   data: {
       post_id:'',
-      post:{}
+      post:{},
+      user_id:wx.getStorageSync('user').user_id
   },
 
   /**
