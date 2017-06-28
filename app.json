@@ -1,8 +1,9 @@
 {
   "pages": [
-    "pages/record/index",
-    "pages/index/index",
     "pages/me/index",
+    "pages/index/index",
+    "pages/record/index",
+
     "pages/read/index",
     "pages/me/set/index",
     "pages/me/name/index",

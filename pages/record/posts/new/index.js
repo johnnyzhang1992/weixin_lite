@@ -1,6 +1,7 @@
 // index.js
 var app = getApp();
 var post_id = '';
+var status = '0';
 Page({
 
   /**
@@ -10,7 +11,11 @@ Page({
       category_id: 9,
       type: 'new',
       status:1,
-      post:{}
+      post:{},
+      items: [
+          {name: '0', value: '公开', checked: 'true'},
+          {name: '-1', value: '自己可见'}
+      ]
   },
 
   /**
@@ -48,7 +53,7 @@ Page({
    */
   onReady: function () {
   },
-    bindFormSubmit: function(e) {
+  bindFormSubmit: function(e) {
         var content = e.detail.value.content;
         var title = e.detail.value.title;
         var des = e.detail.value.description;
@@ -58,6 +63,7 @@ Page({
                 title:title,
                 des: des,
                 content:content ,
+                status:status,
                 id: wx.getStorageSync('user').user_id
             },
             success: function (resp) {
@@ -70,8 +76,8 @@ Page({
                 }
             }
         });
-    },
-    editFormSubmit: function(e) {
+   },
+  editFormSubmit: function(e) {
         var content = e.detail.value.content;
         var title = e.detail.value.title;
         var des = e.detail.value.description;
@@ -82,6 +88,7 @@ Page({
                 des: des,
                 post_id:post_id,
                 content:content ,
+                status:status,
                 id: wx.getStorageSync('user').user_id
             },
             success: function (resp) {
@@ -97,6 +104,10 @@ Page({
                 }
             }
         });
+    },
+    radioChange: function(e) {
+        console.log('radio发生change事件，携带value值为：', e.detail.value);
+        status = e.detail.value;
     },
   /**
    * 生命周期函数--监听页面显示

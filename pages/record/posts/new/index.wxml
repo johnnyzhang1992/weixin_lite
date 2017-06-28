@@ -7,6 +7,13 @@
                 <input  maxlength="10" name="title" placeholder="标题" auto-focus />
             </view>
             <view class="section">
+                <radio-group class="radio-group" bindchange="radioChange">
+                    <label class="radio" wx:for="{{items}}" wk:key="{{name}}">
+                        <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+                    </label>
+                </radio-group>
+            </view>
+            <view class="section">
                 <view class="title">描述：</view>
                 <textarea placeholder="简短描述" name="description"   auto-height/>
             </view>
@@ -22,6 +29,13 @@
             <view class="section">
                 <view class="title">标题：</view>
                 <input  maxlength="10" name="title" value="{{post.title}}" auto-focus />
+            </view>
+            <view class="section">
+                <radio-group class="radio-group" bindchange="radioChange">
+                    <label class="radio" wx:for="{{items}}" wx:key="name">
+                        <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+                    </label>
+                </radio-group>
             </view>
             <view class="section">
                 <view class="title">描述：</view>

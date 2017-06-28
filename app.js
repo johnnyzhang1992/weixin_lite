@@ -183,7 +183,9 @@ App({
     },
     globalData:{
         userInfo: null,
-        runData: null
+        runData: null,
+        posts:null,
+        books:null
     }
 
 });
