@@ -1,62 +1,67 @@
 {
-  "pages": [
-    "pages/me/index",
-    "pages/index/index",
-    "pages/record/index",
-
-    "pages/read/index",
-    "pages/me/set/index",
-    "pages/me/name/index",
-    "pages/me/address/index",
-    "pages/me/signature/index",
-    "pages/me/sport/index",
-    "pages/me/sport/pages/more",
-    "pages/logs/logs",
-    "pages/read/detail/index",
-    "pages/me/book/detail/index",
-    "pages/me/book/new/index",
-    "pages/me/book/index",
-    "pages/record/pois/detail/index",
-    "pages/record/pois/new/index",
-    "pages/record/posts/detail/index",
-    "pages/record/posts/new/index"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#000",
-    "navigationBarTitleText": "小小梦工场",
-    "navigationBarTextStyle": "#fff",
-    "enablePullDownRefresh": true
-  },
-  "tabBar": {
-    "selectedColor": "#43ce7b",
-    "position": "bottom",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "images/icon/apps.png",
-        "selectedIconPath": "images/icon/apps_active.png"
-      },
-      {
-        "pagePath": "pages/read/index",
-        "text": "阅读",
-        "iconPath": "images/icon/read.png",
-        "selectedIconPath": "images/icon/read_active.png"
-      },
-      {
-        "pagePath": "pages/record/index",
-        "text": "记事",
-        "iconPath": "images/icon/edit_light.png",
-        "selectedIconPath": "images/icon/edit_light_active.png"
-      },
-      {
-        "pagePath": "pages/me/index",
-        "text": "我",
-        "iconPath": "images/icon/people.png",
-        "selectedIconPath": "images/icon/people_active.png"
-      }
-    ]
-  },
-  "debug": true
+    "pages": [
+        "pages/me/index",
+        "pages/index/index",
+        "pages/record/index",
+        "pages/read/index",
+        "pages/me/set/index",
+        "pages/me/name/index",
+        "pages/me/address/index",
+        "pages/me/signature/index",
+        "pages/me/sport/index",
+        "pages/me/sport/pages/more",
+        "pages/me/pois/detail/index",
+        "pages/me/pois/new/index",
+        "pages/me/pois/index",
+        "pages/me/posts/detail/index",
+        "pages/me/posts/new/index",
+        "pages/me/posts/index",
+        "pages/logs/logs",
+        "pages/read/detail/index",
+        "pages/me/book/detail/index",
+        "pages/me/book/new/index",
+        "pages/me/book/index",
+        "pages/record/pois/detail/index",
+        "pages/record/pois/new/index",
+        "pages/record/posts/detail/index",
+        "pages/record/posts/new/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#000",
+        "navigationBarTitleText": "小小梦工场",
+        "navigationBarTextStyle": "#fff",
+        "enablePullDownRefresh": true
+    },
+    "tabBar": {
+        "selectedColor": "#43ce7b",
+        "position": "bottom",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "images/icon/apps.png",
+                "selectedIconPath": "images/icon/apps_active.png"
+            },
+            {
+                "pagePath": "pages/read/index",
+                "text": "阅读",
+                "iconPath": "images/icon/read.png",
+                "selectedIconPath": "images/icon/read_active.png"
+            },
+            {
+                "pagePath": "pages/record/index",
+                "text": "记事",
+                "iconPath": "images/icon/edit_light.png",
+                "selectedIconPath": "images/icon/edit_light_active.png"
+            },
+            {
+                "pagePath": "pages/me/index",
+                "text": "我",
+                "iconPath": "images/icon/people.png",
+                "selectedIconPath": "images/icon/people_active.png"
+            }
+        ]
+    },
+    "debug": true
 }

@@ -1,0 +1,4 @@
+/* index.wxss */
+.page__hd {
+    padding:15px;
+}

@@ -10,7 +10,8 @@ Page({
       dayData: {},
       icon: '../../images/icon/footprint_active.png',
       signature : wx.getStorageSync('user').signature,
-      book: ''
+      book: '',
+      count:{}
   },
 
   /**
@@ -46,18 +47,19 @@ Page({
           });
       });
       wx.request({
-          url: 'https://johnnyzhang.cn/wxxcx/get/book',
+          url: 'https://johnnyzhang.cn/wxxcx/get/user_count',
           data: {
-              id : wx.getStorageSync('user').user_id
+              user_id : wx.getStorageSync('user').user_id
           },
           success: function (res) {
               if(res.data){
                   that.setData({
-                      book: res.data.length
-                  })
+                      count: res.data.count
+                  });
+                  wx.stopPullDownRefresh()
               }
           }
-      })
+      });
   },
 
   /**
@@ -110,19 +112,19 @@ Page({
           });
       });
       wx.request({
-          url: 'https://johnnyzhang.cn/wxxcx/get/book',
+          url: 'https://johnnyzhang.cn/wxxcx/get/user_count',
           data: {
-              id : wx.getStorageSync('user').user_id
+              user_id : wx.getStorageSync('user').user_id
           },
           success: function (res) {
               if(res.data){
                   that.setData({
-                      book: res.data.length
+                     count: res.data.count
                   });
                   wx.stopPullDownRefresh()
               }
           }
-      })
+      });
   },
 
   /**

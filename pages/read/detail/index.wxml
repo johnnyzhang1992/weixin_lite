@@ -15,13 +15,17 @@
                 <view class="weui-article__section">
                     <view class="weui-article__h3" style="border-bottom:1px solid #ddd">作者介绍</view>
                     <view class="weui-article__p">
-                        {{ d_book.author_intro}}
+                        <text>
+                            {{ d_book.author_intro}}
+                        </text>
                     </view>
                 </view>
                 <view class="weui-article__section">
                     <view class="weui-article__h3" style="border-bottom:1px solid #ddd">作品介绍</view>
                     <view class="weui-article__p">
-                        {{ d_book.summary}}
+                        <text>
+                            {{ d_book.summary}}
+                        </text>
                     </view>
                 </view>
             </view>
