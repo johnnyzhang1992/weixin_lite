@@ -10,7 +10,7 @@
             </navigator>
             <navigator url="../name/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                 <view class="weui-cell__bd">名字</view>
-                <view class="weui-cell__ft weui-cell__ft_in-access" style="min-width:48px">{{name}}</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access" style="min-width:48px">{{userInfo.nickName}}</view>
             </navigator>
             <navigator url="../signature/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                 <view class="weui-cell__bd">个性签名</view>

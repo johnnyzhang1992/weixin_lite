@@ -98,6 +98,20 @@ Page({
    */
   onPullDownRefresh: function () {
       var that = this;
+      app.getUserInfo(function(userInfo){
+          //更新数据
+          var sex = userInfo.gender;
+          userInfo.nickName =  wx.getStorageSync('user').user_name || userInfo.nickName;
+          userInfo.signature = wx.getStorageSync('user').signature || '';
+          if(sex = 1){
+              userInfo.gender = '男';
+          }else{
+              userInfo.gender = '女'
+          }
+          that.setData({
+              userInfo:userInfo
+          });
+      });
       // 下拉刷新数据
       app.getRunData(function (runData) {
           //更新数据

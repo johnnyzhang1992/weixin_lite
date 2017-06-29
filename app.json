@@ -1,7 +1,7 @@
 {
     "pages": [
-        "pages/me/index",
         "pages/index/index",
+        "pages/me/index",
         "pages/record/index",
         "pages/read/index",
         "pages/me/set/index",

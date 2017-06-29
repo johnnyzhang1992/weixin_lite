@@ -67,12 +67,15 @@ Page({
                 id: wx.getStorageSync('user').user_id
             },
             success: function (resp) {
-                if (resp.data == 'success') {
+                if (resp.data.msg.msg == 'success') {
                     wx.showToast({
                         title: '已完成',
                         icon: 'success',
                         duration: 3000
                     });
+                    wx.redirectTo({
+                        url: '../detail/index?id='+resp.data.msg.id
+                    })
                 }
             }
         });
@@ -89,10 +92,11 @@ Page({
                 post_id:post_id,
                 content:content ,
                 status:status,
-                id: wx.getStorageSync('user').user_id
+                id: e.detail.value.user_id
             },
             success: function (resp) {
-                if (resp.data == 'success') {
+                console.log(resp);
+                if (resp.data.msg.msg == 'success') {
                     wx.showToast({
                         title: '已完成',
                         icon: 'success',
@@ -106,7 +110,6 @@ Page({
         });
     },
     radioChange: function(e) {
-        console.log('radio发生change事件，携带value值为：', e.detail.value);
         status = e.detail.value;
     },
   /**

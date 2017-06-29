@@ -61,3 +61,6 @@ page{
     min-width: 15px;
     background-color: #43ce7b;
 }
+input[type=hidden]{
+    display: none;
+}

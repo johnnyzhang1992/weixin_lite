@@ -24,7 +24,7 @@ Page({
           //更新数据
           var sex = userInfo.gender;
           userInfo.nickName =  wx.getStorageSync('user').user_name || userInfo.nickName;
-          userInfo.signature = wx.getStorageSync('user').signature || '';
+          userInfo.signature = wx.getStorageSync('user').signature || '去设置个性签名吧';
           if(sex = 1){
             userInfo.gender = '男';
           }else{
@@ -34,20 +34,6 @@ Page({
               userInfo:userInfo
           });
       });
-      //获取地址
-      // wx.chooseAddress({
-      //     success: function (res) {
-      //         console.log(res.errMsg);
-      //         console.log(res.userName);
-      //         console.log(res.postalCode);
-      //         console.log(res.provinceName);
-      //         console.log(res.cityName);
-      //         console.log(res.countyName);
-      //         console.log(res.detailInfo);
-      //         console.log(res.nationalCode);
-      //         console.log(res.telNumber);
-      //     }
-      // });
   },
 
   /**
@@ -65,5 +51,29 @@ Page({
           title: '个人信息'
       });
       wx.hideShareMenu()
-  }
+  },
+    /**
+     * 页面相关事件处理函数--监听用户下拉动作
+     */
+    onPullDownRefresh: function () {
+        var that = this;
+        console.log(wx.getStorageSync('user').user_name);
+        //调用应用实例的方法获取全局数据
+        app.getUserInfo(function(userInfo){
+            //更新数据
+            var sex = userInfo.gender;
+            userInfo.nickName =  wx.getStorageSync('user').user_name || userInfo.nickName;
+            userInfo.signature = wx.getStorageSync('user').signature || '';
+            if(sex = 1){
+                userInfo.gender = '男';
+            }else{
+                userInfo.gender = '女'
+            }
+            that.setData({
+                userInfo:userInfo
+            });
+            console.log(userInfo.nickName);
+            wx.stopPullDownRefresh()
+        });
+    }
 });

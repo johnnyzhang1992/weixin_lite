@@ -26,6 +26,7 @@
     </view>
     <view class="page__bd" wx:elif="{{ type == 'edit'}}">
         <form bindsubmit="editFormSubmit">
+            <input  type="hidden" name="user_id" value="{{post.user_id}}" />
             <view class="section">
                 <view class="title">标题：</view>
                 <input  maxlength="10" name="title" value="{{post.title}}" auto-focus />

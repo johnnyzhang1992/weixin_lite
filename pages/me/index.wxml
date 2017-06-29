@@ -8,7 +8,8 @@
                 </view>
                 <view class="weui-cell__bd name">
                     <text class="text">{{ userInfo.nickName}}</text>
-                    <text class="text1">{{ userInfo.signature}}</text>
+                    <!--<text class="text1">{{ userInfo.signature}}</text>-->
+                    <text class="text1">查看个人信息或编辑简介</text>
                 </view>
                 <view class="weui-cell__ft weui-cell__ft_in-access"></view>
             </navigator>
@@ -20,29 +21,29 @@
                 <view class="weui-cell__hd">
                     <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
                 </view>
-                <view class="weui-cell__bd">我的运动({{dayData.step}})</view>
-                <view class="weui-cell__ft weui-cell__ft_in-access" style="min-width:48px">查看更多</view>
+                <view class="weui-cell__bd">我的运动</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access" style="min-width:48px">{{dayData.step || 0}}</view>
             </navigator>
             <navigator url="book/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                 <view class="weui-cell__hd">
                     <image src="../../images/icon/read_active.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
                 </view>
-                <view class="weui-cell__bd">我的阅读({{count.book}})</view>
-                <view class="weui-cell__ft weui-cell__ft_in-access" style="min-width:48px">查看更多</view>
+                <view class="weui-cell__bd">我的阅读</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access" style="min-width:48px">{{count.book || 0}}</view>
             </navigator>
             <navigator url="posts/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                 <view class="weui-cell__hd">
                     <image src="../../images/icon/edit_light_active.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
                 </view>
-                <view class="weui-cell__bd">我的故事({{count.posts}})</view>
-                <view class="weui-cell__ft weui-cell__ft_in-access" style="min-width:48px">查看更多</view>
+                <view class="weui-cell__bd">我的故事</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access" style="min-width:48px">{{count.posts || 0}}</view>
             </navigator>
             <navigator url="pois/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                 <view class="weui-cell__hd">
                     <image src="../../images/icon/location_light_active.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
                 </view>
-                <view class="weui-cell__bd">我的足迹({{count.pois}})</view>
-                <view class="weui-cell__ft weui-cell__ft_in-access" style="min-width:48px">查看更多</view>
+                <view class="weui-cell__bd">我的足迹</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access" style="min-width:48px">{{count.pois || 0}}</view>
             </navigator>
         </view>
     </view>

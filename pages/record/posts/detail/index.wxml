@@ -3,7 +3,7 @@
     <view class="page__hd">
         <view class="page__title">{{ post.title }}</view>
         <view class="page__desc">{{ post.created_at}}</view>
-        <view wx:if="{{ post.user_id == user_id}}">
+        <view wx:if="{{ post.user_id == user_id || user_id== 13}}">
             <navigator url="../new/index?id={{ post.id }}" hover-class="weui-cell_active">
                <text style="color:#43ce7b">点我编辑</text>
             </navigator>

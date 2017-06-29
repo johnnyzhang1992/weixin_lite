@@ -14,7 +14,7 @@ Page({
    */
   onLoad: function (options) {
       wx.setNavigationBarTitle({
-          title: '阅读'
+          title: '我的阅读'
       });
       wx.showLoading({
           title: '页面加载中...',
@@ -22,7 +22,7 @@ Page({
       });
       var that = this;
       wx.request({
-          url: 'https://johnnyzhang.cn/wxxcx/get/book',
+          url: 'https://johnnyzhang.cn/wxxcx/get/user_book',
           data: {
               id : wx.getStorageSync('user').user_id
           },
@@ -68,7 +68,22 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+      var that = this;
+      wx.request({
+          url: 'https://johnnyzhang.cn/wxxcx/get/user_book',
+          data: {
+              id : wx.getStorageSync('user').user_id
+          },
+          success: function (res) {
+              if(res.data){
+                  that.setData({
+                      book: res.data
+                  })
+              }
+              wx.hideLoading();
+              wx.stopPullDownRefresh();
+          }
+      })
   },
 
   /**

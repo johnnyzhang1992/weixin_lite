@@ -68,7 +68,21 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+      var that = this;
+      wx.request({
+          url: 'https://johnnyzhang.cn/wxxcx/get/book',
+          data: {
+              id : wx.getStorageSync('user').user_id
+          },
+          success: function (res) {
+              if(res.data){
+                  that.setData({
+                      book: res.data
+                  });
+                  wx.stopPullDownRefresh()
+              }
+          }
+      })
   },
 
   /**

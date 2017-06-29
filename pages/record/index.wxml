@@ -25,7 +25,7 @@
                             <view class="weui-media-box weui-media-box_text" wx:for="{{posts}}" wx:key="id" wx:if="{{ item.status == 0 }}">
                                 <view class="weui-media-box__title weui-media-box__title_in-text">
                                     <navigator url="posts/detail/index?id={{ item.id}}" hover-class="navigator-hover">
-                                        {{ item.title}}
+                                        {{ item.title}}{{ item.user_id}}
                                     </navigator>
                                 </view>
                                 <view class="weui-media-box__desc" wx:if="{{ item.description == NULL || item.description == ''}}">暂无简介</view>

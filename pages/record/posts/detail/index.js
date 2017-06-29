@@ -20,9 +20,6 @@ Page({
           mask: true
       });
       var that = this;
-      that.setData({
-          post_id: options.id
-      });
       wx.request({
           url: 'https://johnnyzhang.cn/wxxcx/get/post_detail',
           data: {

@@ -15,9 +15,6 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  bindChange: function(e) {
-      inputContent['address'] = e.detail.value;
-  } ,
   onLoad: function (options) {
       wx.setNavigationBarTitle({
           title: '我的地址'
@@ -27,14 +24,13 @@ Page({
       // app.choseLocation();
       if(_address.address){
           that.setData({
-              address: wx.getStorageSync('location'),
+              address: wx.getStorageSync('location') || { address:'填写你的地址吧'},
               info: '更新地址'
           })
       }
   },
-    saveAddress: function () {
-        var new_address = inputContent['address'];
-        console.log(new_address);
+    saveAddress: function (e) {
+        var new_address = e.detail.value.address;
         if(new_address){
             _address.address = new_address;
             wx.request({
