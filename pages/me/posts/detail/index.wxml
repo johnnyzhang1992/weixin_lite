@@ -3,10 +3,19 @@
     <view class="page__hd">
         <view class="page__title">{{ post.title }}</view>
         <view class="page__desc">{{ post.created_at}}</view>
-        <view wx:if="{{ post.user_id == user_id}}">
-            <navigator url="../new/index?id={{ post.id }}" hover-class="weui-cell_active">
-               <text style="color:#43ce7b">点我编辑</text>
-            </navigator>
+        <view wx:if="{{ post.user_id == user_id}}" style="margin-top:10rpx">
+            <view class="weui-media-box__info" >
+                <view class="weui-media-box__info__meta">
+                    <navigator url="../new/index?id={{ post.id }}" hover-class="weui-cell_active">
+                        <text style="color:#43ce7b">点我编辑</text>
+                    </navigator>
+                </view>
+                <view class="weui-media-box__info__meta">
+                    <view bindtap="deletePost" data-post_id="{{ post.id}}" hover-class="weui-cell_active">
+                        <text style="color:#43ce7b">点我删除</text>
+                    </view>
+                </view>
+            </view>
         </view>
     </view>
     <view class="page__bd">

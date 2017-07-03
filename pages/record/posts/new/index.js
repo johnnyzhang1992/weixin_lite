@@ -64,7 +64,7 @@ Page({
                 des: des,
                 content:content ,
                 status:status,
-                id: wx.getStorageSync('user').user_id
+                user_id: wx.getStorageSync('user').user_id
             },
             success: function (resp) {
                 if (resp.data.msg.msg == 'success') {
@@ -92,7 +92,7 @@ Page({
                 post_id:post_id,
                 content:content ,
                 status:status,
-                id: e.detail.value.user_id
+                user_id: e.detail.value.user_id
             },
             success: function (resp) {
                 console.log(resp);

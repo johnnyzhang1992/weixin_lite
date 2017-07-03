@@ -11,7 +11,8 @@ Page({
       icon: '../../images/icon/footprint_active.png',
       signature : wx.getStorageSync('user').signature,
       book: '',
-      count:{}
+      count:{},
+      user_id:wx.getStorageSync('user').user_id
   },
 
   /**
@@ -66,7 +67,6 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
   },
 
   /**

@@ -64,10 +64,10 @@ Page({
                 des: des,
                 content:content ,
                 status:status,
-                id: wx.getStorageSync('user').user_id
+                user_id: wx.getStorageSync('user').user_id
             },
             success: function (resp) {
-                if (resp.data == 'success') {
+                if (resp.data.msg.msg == 'success') {
                     wx.showToast({
                         title: '已完成',
                         icon: 'success',
@@ -92,7 +92,7 @@ Page({
                 id: wx.getStorageSync('user').user_id
             },
             success: function (resp) {
-                if (resp.data == 'success') {
+                if (resp.data.msg.msg == 'success') {
                     wx.showToast({
                         title: '已完成',
                         icon: 'success',

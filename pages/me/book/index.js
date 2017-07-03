@@ -24,7 +24,7 @@ Page({
       wx.request({
           url: 'https://johnnyzhang.cn/wxxcx/get/user_book',
           data: {
-              id : wx.getStorageSync('user').user_id
+              user_id : wx.getStorageSync('user').user_id
           },
           success: function (res) {
               if(res.data){
@@ -72,7 +72,7 @@ Page({
       wx.request({
           url: 'https://johnnyzhang.cn/wxxcx/get/user_book',
           data: {
-              id : wx.getStorageSync('user').user_id
+              user_id : wx.getStorageSync('user').user_id
           },
           success: function (res) {
               if(res.data){
