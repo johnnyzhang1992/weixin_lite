@@ -9,7 +9,7 @@ Page({
 
   data: {
       tabs: ["故事", "游记", "日记"],
-      activeIndex: 0,
+      activeIndex: 1,
       sliderOffset: 0,
       sliderLeft: 0,
       pois: {},
