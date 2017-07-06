@@ -23,7 +23,6 @@ Page({
               },
               success: function (res) {
                   if(res.data){
-                    console.log(res.data);
                       that.setData({
                           users: res.data
                       });

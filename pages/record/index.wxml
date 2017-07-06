@@ -50,7 +50,7 @@
                     </view>
                     <view class="weui-panel">
                         <view class="weui-panel__bd">
-                            <view class="weui-media-box weui-media-box_text" wx:for="{{pois}}" wx:key="id">
+                            <view class="weui-media-box weui-media-box_text" wx:for="{{pois}}" wx:key="updated_at">
                                 <view class="weui-media-box__title weui-media-box__title_in-text">
                                     <navigator url="pois/detail/index?id={{ item.id}}" hover-class="navigator-hover">
                                         {{ item.poi_name}}
