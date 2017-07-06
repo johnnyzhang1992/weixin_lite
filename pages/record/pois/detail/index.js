@@ -10,7 +10,8 @@ Page({
       poi: {},
       lat:'',
       lng:'',
-      markers: []
+      markers: [],
+      user_id:wx.getStorageSync('user').user_id
   },
 
   /**
@@ -65,6 +66,39 @@ Page({
             address:e.target.dataset.address
         })
   },
+    deletePoi:function (e) {
+        wx.showModal({
+            title: '提示',
+            content: '你确定要删除吗？',
+            success: function(res) {
+                if (res.confirm) {
+                    console.log(e);
+                    var user_id = e.currentTarget.dataset.user_id;
+                    var poi_id = e.currentTarget.dataset.poi_id;
+                    wx.request({
+                        url: 'https://johnnyzhang.cn/wxxcx/delete/poi',
+                        data: {
+                            poi_id: poi_id
+                        },
+                        success: function (res) {
+                            if(res.data.msg.msg == 'success'){
+                                wx.showToast({
+                                    title: '删除成功',
+                                    icon: 'success',
+                                    duration: 3000
+                                });
+                                wx.redirectTo({
+                                    url: '../../index'
+                                })
+                            }
+                        }
+                    })
+                } else if (res.cancel) {
+                    console.log('用户点击取消')
+                }
+            }
+        });
+    },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -8,10 +8,17 @@
             <image class="weui-article__img" src="../../../../images/poi_cover.jpg" mode="aspectFit" />
         </view>
         <view class="page__title">{{ poi.poi_name }}</view>
-        <view wx:if="{{ post.user_id == user_id || user_id== 13}}">
-            <navigator url="../new/index?id={{ poi.id }}" hover-class="weui-cell_active">
-                <text style="color:#43ce7b">点我编辑</text>
-            </navigator>
+        <view class="weui-media-box__info" wx:if="{{ poi.user_id == user_id || user_id== 13}}">
+            <view class="weui-media-box__info__meta">
+                <navigator url="../new/index?id={{ poi.id }}" hover-class="weui-cell_active">
+                    <text style="color:#43ce7b">点我编辑</text>
+                </navigator>
+            </view>
+            <view class="weui-media-box__info__meta">
+                <view bindtap="deletePoi" data-poi_id="{{ poi.id}}" hover-class="weui-cell_active">
+                    <text style="color:#43ce7b">点我删除</text>
+                </view>
+            </view>
         </view>
         <view class="page__desc">{{ poi.user_name}}</view>
         <view class="page__desc ">{{ poi.address}}</view>
