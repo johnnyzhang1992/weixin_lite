@@ -75,6 +75,30 @@ Page({
               }
           }
       });
+      wx.request({
+          url: 'https://johnnyzhang.cn/wxxcx/get/diarys',
+          data: {
+              id: wx.getStorageSync('user').user_id
+          },
+          success: function (resp) {
+              if (resp.data) {
+                  var diarys = resp.data;
+                  if(resp.data){
+                      var _data = [];
+                      for(var i =diarys.length-1 ;i>=0;i--){
+                          var _obj = {};
+                          _obj = diarys[i];
+                          _obj.created_at = app.getDateDiff(diarys[i].created_at);
+                          _data.push(_obj);
+                      }
+                      console.log(_data);
+                      that.setData({
+                          diarys: _data
+                      })
+                  }
+              }
+          }
+      });
   },
   tabClick: function (e) {
         this.setData({
@@ -133,6 +157,29 @@ Page({
                       }
                       that.setData({
                           posts: _data
+                      })
+                  }
+              }
+          }
+      });
+      wx.request({
+          url: 'https://johnnyzhang.cn/wxxcx/get/diarys',
+          data: {
+              id: wx.getStorageSync('user').user_id
+          },
+          success: function (resp) {
+              if (resp.data) {
+                  var diarys = resp.data;
+                  if(resp.data){
+                      var _data = [];
+                      for(var i =diarys.length-1 ;i>=0;i--){
+                          var _obj = {};
+                          _obj = diarys[i];
+                          _obj.created_at = app.getDateDiff(diarys[i].created_at);
+                          _data.push(_obj);
+                      }
+                      that.setData({
+                          diarys: _data
                       })
                   }
               }

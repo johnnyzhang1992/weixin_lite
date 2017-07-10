@@ -1,9 +1,8 @@
 {
     "pages": [
-        "pages/record/index",
         "pages/index/index",
+        "pages/record/index",
         "pages/me/index",
-
         "pages/read/index",
         "pages/me/set/index",
         "pages/me/name/index",
@@ -26,7 +25,10 @@
         "pages/record/pois/new/index",
         "pages/record/posts/detail/index",
         "pages/record/posts/new/index",
-        "pages/me/manage/index"
+        "pages/me/manage/index",
+        "pages/me/diary/new/index",
+        "pages/me/diary/detail/index",
+        "pages/me/diary/index"
     ],
     "window": {
         "backgroundTextStyle": "light",

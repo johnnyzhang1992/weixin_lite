@@ -71,13 +71,29 @@
                     </view>
                 </view>
                 <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+                    <view class="weui-panel" style="margin-top:20rpx;">
+                        <navigator url="../me/diary/new/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                            <view class="weui-cell__bd">
+                                <image class="me-avatar" src="../../images/icon/round_add.png" style="width:60rpx;height:60rpx;"></image>
+                            </view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access" style="min-width:48px">新增</view>
+                        </navigator>
+                    </view>
                     <view class="weui-panel">
                         <view class="weui-panel__bd">
-                            <view class="weui-media-box weui-media-box_text">
+                            <view class="weui-media-box weui-media-box_text" wx:for="{{diarys}}" wx:key="{{ id}}" wx:if="{{item.status=='active'}}">
                                 <view class="weui-media-box__title weui-media-box__title_in-text">
-                                    <view style="text-align:center">
-                                        敬请期待
-                                    </view>
+                                    <navigator url="../me/diary/detail/index?id={{ item.id}}" hover-class="navigator-hover">
+                                        {{ item.title}}{{ item.user_id}}
+                                    </navigator>
+                                </view>
+                                <view class="weui-media-box__desc" wx:if="{{ item.description == NULL || item.description == ''}}">暂无简介</view>
+                                <view class="weui-media-box__desc" wx:elif="{{ item.description}}">{{ item.description}}</view>
+                                <view class="weui-media-box__info" >
+                                    <view class="weui-media-box__info__meta">{{ item.user_name}}</view>
+                                    <view class="weui-media-box__info__meta">{{ item.created_at}}</view>
+                                    <view class="weui-media-box__info__meta" wx:if="{{ item.status == 'private'}}"><view class="weui-badge" style="margin-left: 5px;">私人</view></view>
+                                    <view class="weui-media-box__info__meta" wx:elif="{{ item.status == 'active'}}"><view class="weui-badge" style="margin-left: 5px;">公开</view></view>
                                 </view>
                             </view>
                         </view>
