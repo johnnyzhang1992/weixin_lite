@@ -80,7 +80,7 @@
                         </navigator>
                     </view>
                     <view class="weui-panel">
-                        <view class="weui-panel__bd">
+                        <view class="weui-panel__bd" wx:if="{{ diarys.length>=1}}">
                             <view class="weui-media-box weui-media-box_text" wx:for="{{diarys}}" wx:key="{{ id}}" wx:if="{{item.status=='active'}}">
                                 <view class="weui-media-box__title weui-media-box__title_in-text">
                                     <navigator url="../me/diary/detail/index?id={{ item.id}}" hover-class="navigator-hover">
@@ -95,6 +95,11 @@
                                     <view class="weui-media-box__info__meta" wx:if="{{ item.status == 'private'}}"><view class="weui-badge" style="margin-left: 5px;">私人</view></view>
                                     <view class="weui-media-box__info__meta" wx:elif="{{ item.status == 'active'}}"><view class="weui-badge" style="margin-left: 5px;">公开</view></view>
                                 </view>
+                            </view>
+                        </view>
+                        <view class="weui-panel__bd" wx:elif="{{ diarys.length<1}}">
+                            <view class="weui-media-box">
+                                木有内容哦
                             </view>
                         </view>
                     </view>

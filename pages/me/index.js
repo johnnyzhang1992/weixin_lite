@@ -1,5 +1,7 @@
 // index.js
 var app = getApp();
+var _userInfo = {};
+var __dayData = {};
 Page({
 
   /**
@@ -31,9 +33,7 @@ Page({
           }else{
               userInfo.gender = '女'
           }
-          that.setData({
-              userInfo:userInfo
-          });
+          _userInfo = userInfo;
       });
       app.getRunData(function (runData) {
           //更新数据
@@ -44,8 +44,8 @@ Page({
           _dayData.step = stepInfoList[stepInfoList.length-1].step;
           // console.log(_data);
           that.setData({
-              dayData: _dayData
-          });
+              dayData:_dayData
+          })
       });
       wx.request({
           url: 'https://johnnyzhang.cn/wxxcx/get/user_count',
@@ -55,6 +55,7 @@ Page({
           success: function (res) {
               if(res.data){
                   that.setData({
+                      userInfo:_userInfo,
                       count: res.data.count
                   });
                   wx.stopPullDownRefresh()
@@ -108,9 +109,7 @@ Page({
           }else{
               userInfo.gender = '女'
           }
-          that.setData({
-              userInfo:userInfo
-          });
+          _userInfo = userInfo;
       });
       // 下拉刷新数据
       app.getRunData(function (runData) {
@@ -133,6 +132,7 @@ Page({
           success: function (res) {
               if(res.data){
                   that.setData({
+                      userInfo:_userInfo,
                      count: res.data.count
                   });
                   wx.stopPullDownRefresh()

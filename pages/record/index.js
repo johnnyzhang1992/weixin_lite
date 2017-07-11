@@ -1,6 +1,11 @@
 // index.js
 var app = getApp();
 var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
+var _pois = {};
+var _posts = {};
+var _diarys = {};
+var _sildeLeft = 0;
+var _slideOffset = 0;
 Page({
 
   /**
@@ -23,10 +28,8 @@ Page({
       var that = this;
       wx.getSystemInfo({
           success: function(res) {
-              that.setData({
-                  sliderLeft: (res.windowWidth / that.data.tabs.length - sliderWidth) / 2,
-                  sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex
-              });
+              _sildeLeft =  (res.windowWidth / that.data.tabs.length - sliderWidth) / 2;
+              _slideOffset = res.windowWidth / that.data.tabs.length * that.data.activeIndex
           }
       });
       wx.request({
@@ -45,9 +48,7 @@ Page({
                           _obj.created_at = app.getDateDiff(posts[i].created_at);
                           _data.push(_obj);
                       }
-                      that.setData({
-                          posts: _data
-                      })
+                      _posts = _data;
                   }
               }
           }
@@ -68,9 +69,7 @@ Page({
                           _obj.created_at = app.getDateDiff(pois[i].created_at);
                           _data.push(_obj);
                       }
-                      that.setData({
-                          pois: _data
-                      })
+                      _pois = _data;
                   }
               }
           }
@@ -91,9 +90,12 @@ Page({
                           _obj.created_at = app.getDateDiff(diarys[i].created_at);
                           _data.push(_obj);
                       }
-                      console.log(_data);
                       that.setData({
-                          diarys: _data
+                          sliderLeft:_sildeLeft,
+                          sliderOffset:_slideOffset,
+                          diarys: _data,
+                          posts: _posts,
+                          pois: _pois
                       })
                   }
               }
@@ -110,7 +112,6 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
   },
 
   /**
