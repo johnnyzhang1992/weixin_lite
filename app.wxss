@@ -64,3 +64,11 @@ page{
 input[type=hidden]{
     display: none;
 }
+textarea{
+    min-height:100rpx;
+    width:90%;
+    padding:20rpx 30rpx;
+    border:1px solid #ddd;
+    margin-bottom:30rpx;
+    background-color:#fff ;
+}

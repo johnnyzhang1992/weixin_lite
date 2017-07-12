@@ -41,6 +41,18 @@
                     <view class="weui-article__p" wx:elif="{{ !poi.description }}">
                         无内容
                     </view>
+
+                    <view class="weui-article__section">
+                        <view class="weui-article__h3" style="border-bottom:1px solid #ddd">评论</view>
+                        <form bindsubmit="commentFormSubmit">
+                            <input type="hidden" name="type" value="poi"/>
+                            <input type="hidden" name="id" value="{{ poi.id}}"/>
+                            <view class="weui-article__p section">
+                                <textarea placeholder="请输入内容" name="content"  auto-height/>
+                            </view>
+                            <button form-type="submit" type="primary"> 提交 </button>
+                        </form>
+                    </view>
                 </view>
             </view>
         </view>

@@ -1,5 +1,8 @@
 // index.js
 var app = getApp();
+var _comments = {};
+var _type = 'post';
+var _id = '';
 Page({
 
   /**
@@ -8,20 +11,41 @@ Page({
   data: {
       post_id:'',
       post:{},
-      user_id:wx.getStorageSync('user').user_id
+      user_id:wx.getStorageSync('user').user_id,
+      comments:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+      var that = this;
+      _id = options.id;
       wx.showLoading({
           title: '页面加载中...',
           mask: true
       });
-      var that = this;
-      that.setData({
-          post_id: options.id
+      var user_id = wx.getStorageSync('user').user_id;
+      wx.request({
+         url:  'https://johnnyzhang.cn/wxxcx/get/comments',
+          data:{
+              id:_id,
+              type:_type,
+              user_id:user_id
+          },
+          success: function (res) {
+              if(res.data){
+                  var comments = res.data;
+                  var _data = [];
+                  for(var i =comments.length-1 ;i>=0;i--){
+                      var _obj = {};
+                      _obj = comments[i];
+                      _obj.created_at = app.getDateDiff(comments[i].created_at);
+                      _data.push(_obj);
+                  }
+                  _comments = _data
+              }
+          }
       });
       wx.request({
           url: 'https://johnnyzhang.cn/wxxcx/get/post_detail',
@@ -37,7 +61,8 @@ Page({
                       title: post.title
                   });
                   that.setData({
-                      post: post
+                      post: post,
+                      comments:_comments
                   })
               }
           }
@@ -76,7 +101,41 @@ Page({
             }
         });
     },
-
+    commentFormSubmit: function (e) {
+        var that = this;
+        var id = e.detail.value.id;
+        var type = e.detail.value.type;
+        var user_id = wx.getStorageSync('user').user_id;
+        var content = e.detail.value.content;
+        wx.showModal({
+            title: '提示',
+            content: '你确定要提交吗？',
+            success: function(res) {
+                if (res.confirm) {
+                    wx.request({
+                        url: 'https://johnnyzhang.cn/wxxcx/save/comment',
+                        data: {
+                            id:id,
+                            type:type,
+                            user_id:user_id,
+                            content:content
+                        },
+                        success: function (res) {
+                            if(res.data.msg.msg == 'success'){
+                                wx.showToast({
+                                    title: '提交成功',
+                                    icon: 'success',
+                                    duration: 3000
+                                });
+                            }
+                        }
+                    })
+                } else if (res.cancel) {
+                    console.log('用户点击取消')
+                }
+            }
+        });
+    },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
