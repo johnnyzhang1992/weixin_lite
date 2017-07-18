@@ -33,27 +33,6 @@ Page({
           }
       });
       wx.request({
-          url: 'https://johnnyzhang.cn/wxxcx/get/posts',
-          data: {
-              id: wx.getStorageSync('user').user_id
-          },
-          success: function (resp) {
-              if (resp.data) {
-                  var posts = resp.data;
-                  if(resp.data){
-                      var _data = [];
-                      for(var i =posts.length-1 ;i>=0;i--){
-                          var _obj = {};
-                          _obj = posts[i];
-                          _obj.created_at = app.getDateDiff(posts[i].created_at);
-                          _data.push(_obj);
-                      }
-                      _posts = _data;
-                  }
-              }
-          }
-      });
-      wx.request({
           url: 'https://johnnyzhang.cn/wxxcx/get/pois',
           data: {
               id: wx.getStorageSync('user').user_id
@@ -69,7 +48,46 @@ Page({
                           _obj.created_at = app.getDateDiff(pois[i].created_at);
                           _data.push(_obj);
                       }
-                      _pois = _data;
+                      that.setData({
+                          sliderLeft:_sildeLeft,
+                          sliderOffset:_slideOffset,
+                          pois: _data
+                      })
+                  }
+              }
+          }
+      });
+  },
+  tabClick: function (e) {
+        this.setData({
+            sliderOffset: e.currentTarget.offsetLeft,
+            activeIndex: e.currentTarget.id
+        });
+  },
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+      var that = this;
+      wx.request({
+          url: 'https://johnnyzhang.cn/wxxcx/get/posts',
+          data: {
+              id: wx.getStorageSync('user').user_id
+          },
+          success: function (resp) {
+              if (resp.data) {
+                  var posts = resp.data;
+                  if(resp.data){
+                      var _data = [];
+                      for(var i =posts.length-1 ;i>=0;i--){
+                          var _obj = {};
+                          _obj = posts[i];
+                          _obj.created_at = app.getDateDiff(posts[i].created_at);
+                          _data.push(_obj);
+                      }
+                      that.setData({
+                          posts: _data
+                      })
                   }
               }
           }
@@ -91,27 +109,12 @@ Page({
                           _data.push(_obj);
                       }
                       that.setData({
-                          sliderLeft:_sildeLeft,
-                          sliderOffset:_slideOffset,
-                          diarys: _data,
-                          posts: _posts,
-                          pois: _pois
+                          diarys: _data
                       })
                   }
               }
           }
       });
-  },
-  tabClick: function (e) {
-        this.setData({
-            sliderOffset: e.currentTarget.offsetLeft,
-            activeIndex: e.currentTarget.id
-        });
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
   },
 
   /**

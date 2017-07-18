@@ -61,8 +61,11 @@ Page({
                                     icon: 'success',
                                     duration: 3000
                                 });
-                                wx.redirectTo({
-                                    url: '../../index'
+                                // wx.redirectTo({
+                                //     url: '../../index'
+                                // })
+                                wx.navigateBack({
+                                    delta: 1
                                 })
                             }
                         }

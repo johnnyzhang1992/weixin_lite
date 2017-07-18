@@ -27,27 +27,6 @@ Page({
       });
       var user_id = wx.getStorageSync('user').user_id;
       wx.request({
-         url:  'https://johnnyzhang.cn/wxxcx/get/comments',
-          data:{
-              id:_id,
-              type:_type,
-              user_id:user_id
-          },
-          success: function (res) {
-              if(res.data){
-                  var comments = res.data;
-                  var _data = [];
-                  for(var i =comments.length-1 ;i>=0;i--){
-                      var _obj = {};
-                      _obj = comments[i];
-                      _obj.created_at = app.getDateDiff(comments[i].created_at);
-                      _data.push(_obj);
-                  }
-                  _comments = _data
-              }
-          }
-      });
-      wx.request({
           url: 'https://johnnyzhang.cn/wxxcx/get/post_detail',
           data: {
               post_id:options.id,
@@ -61,8 +40,7 @@ Page({
                       title: post.title
                   });
                   that.setData({
-                      post: post,
-                      comments:_comments
+                      post: post
                   })
               }
           }
@@ -74,8 +52,6 @@ Page({
             content: '你确定要删除吗？',
             success: function(res) {
                 if (res.confirm) {
-                    console.log(e);
-                    var user_id = e.currentTarget.dataset.user_id;
                     var post_id = e.currentTarget.dataset.post_id;
                     wx.request({
                         url: 'https://johnnyzhang.cn/wxxcx/delete/post',
@@ -89,9 +65,62 @@ Page({
                                     icon: 'success',
                                     duration: 3000
                                 });
-                                wx.redirectTo({
-                                    url: '../index'
+                                // wx.redirectTo({
+                                //     url: '../index'
+                                // })
+                                // 在C页面内 navigateBack，将返回A页面
+                                wx.navigateBack({
+                                    delta: 1
                                 })
+                            }
+                        }
+                    })
+                } else if (res.cancel) {
+                    console.log('用户点击取消')
+                }
+            }
+        });
+    },
+    deleteComment: function (e) {
+        var that = this;
+        var user_id = wx.getStorageSync('user').user_id;
+        wx.showModal({
+            title: '提示',
+            content: '你确定要删除吗？',
+            success: function(res) {
+                if (res.confirm) {
+                    var comment_id = e.currentTarget.dataset.comment_id;
+                    wx.request({
+                        url: 'https://johnnyzhang.cn/wxxcx/delete/comment',
+                        data: {
+                            comment_id: comment_id
+                        },
+                        success: function (res) {
+                            if(res.data.msg.msg == 'success'){
+                                wx.showToast({
+                                    title: '删除成功',
+                                    icon: 'success',
+                                    duration: 3000
+                                });
+                                wx.request({
+                                    url:  'https://johnnyzhang.cn/wxxcx/get/comments',
+                                    data:{
+                                        id:_id,
+                                        type:_type,
+                                        user_id:user_id
+                                    },
+                                    success: function (res) {
+                                        if(res.data){
+                                            var comments = res.data;
+                                            comments.forEach(function (p1, p2, p3) {
+                                                p1.created_at =app.getDateDiff(p1.created_at);
+                                            });
+                                            that.setData({
+                                                comments:comments
+                                            });
+                                        }
+                                    }
+                                });
                             }
                         }
                     })
@@ -127,6 +156,25 @@ Page({
                                     icon: 'success',
                                     duration: 3000
                                 });
+                                wx.request({
+                                    url:  'https://johnnyzhang.cn/wxxcx/get/comments',
+                                    data:{
+                                        id:_id,
+                                        type:_type,
+                                        user_id:user_id
+                                    },
+                                    success: function (res) {
+                                        if(res.data){
+                                            var comments = res.data;
+                                            comments.forEach(function (p1, p2, p3) {
+                                                p1.created_at =app.getDateDiff(p1.created_at);
+                                            });
+                                            that.setData({
+                                               comments:comments
+                                            });
+                                        }
+                                    }
+                                });
                             }
                         }
                     })
@@ -140,7 +188,29 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+      var that = this;
       wx.hideLoading();
+      var user_id = wx.getStorageSync('user').user_id;
+      wx.request({
+          url:  'https://johnnyzhang.cn/wxxcx/get/comments',
+          data:{
+              id:_id,
+              type:_type,
+              user_id:user_id
+          },
+          success: function (res) {
+              if(res.data){
+                  var comments = res.data;
+                  // var _data = [];
+                  comments.forEach(function (p1, p2, p3) {
+                      p1.created_at =app.getDateDiff(p1.created_at);
+                  });
+                  that.setData({
+                      comments:comments
+                  });
+              }
+          }
+      });
   },
 
   /**

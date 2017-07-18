@@ -4,6 +4,7 @@
 //index.js
 //获取应用实例
 var app = getApp();
+var _userInfo = null;
 Page({
     data: {
         motto: '微信运动',
@@ -30,10 +31,7 @@ Page({
         //调用应用实例的方法获取全局数据
         app.getUserInfo(function(userInfo){
             userInfo.nickName =  wx.getStorageSync('user').user_name || userInfo.nickName;
-            //更新数据
-            that.setData({
-                userInfo:userInfo
-            });
+            _userInfo = userInfo;
         });
         app.getRunData(function (runData) {
             //更新数据
@@ -55,6 +53,7 @@ Page({
             _dayData.step = stepInfoList[stepInfoList.length-1].step;
             // console.log(_data);
             that.setData({
+                userInfo:_userInfo,
                 runData:_data,
                 dayData: _dayData
             });

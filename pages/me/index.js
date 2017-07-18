@@ -35,18 +35,6 @@ Page({
           }
           _userInfo = userInfo;
       });
-      app.getRunData(function (runData) {
-          //更新数据
-          var stepInfoList = runData;
-          // 当天的数据
-          var _dayData = {};
-          _dayData.time = app.formatTime(stepInfoList[stepInfoList.length-1].timestamp);
-          _dayData.step = stepInfoList[stepInfoList.length-1].step;
-          // console.log(_data);
-          that.setData({
-              dayData:_dayData
-          })
-      });
       wx.request({
           url: 'https://johnnyzhang.cn/wxxcx/get/user_count',
           data: {
@@ -68,6 +56,19 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+      var that = this;
+      app.getRunData(function (runData) {
+          //更新数据
+          var stepInfoList = runData;
+          // 当天的数据
+          var _dayData = {};
+          _dayData.time = app.formatTime(stepInfoList[stepInfoList.length-1].timestamp);
+          _dayData.step = stepInfoList[stepInfoList.length-1].step;
+          // console.log(_data);
+          that.setData({
+              dayData:_dayData
+          })
+      });
   },
 
   /**

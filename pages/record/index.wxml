@@ -13,7 +13,7 @@
             <view class="weui-tab__panel">
                 <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
                     <view class="weui-panel" style="margin-top:20rpx;">
-                        <navigator url="posts/new/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                        <navigator url="../me/posts/new/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                             <view class="weui-cell__bd">
                                 <image class="me-avatar" src="../../images/icon/round_add.png" style="width:60rpx;height:60rpx;"></image>
                             </view>
@@ -24,8 +24,8 @@
                         <view class="weui-panel__bd">
                             <view class="weui-media-box weui-media-box_text" wx:for="{{posts}}" wx:key="id" wx:if="{{ item.status == 0 }}">
                                 <view class="weui-media-box__title weui-media-box__title_in-text">
-                                    <navigator url="posts/detail/index?id={{ item.id}}" hover-class="navigator-hover">
-                                        {{ item.title}}{{ item.user_id}}
+                                    <navigator url="../me/posts/detail/index?id={{ item.id}}" hover-class="navigator-hover">
+                                        {{ item.title}}
                                     </navigator>
                                 </view>
                                 <view class="weui-media-box__desc" wx:if="{{ item.description == NULL || item.description == ''}}">暂无简介</view>
@@ -41,7 +41,7 @@
                 </view>
                 <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
                     <view class="weui-panel" style="margin-top:20rpx;">
-                        <navigator url="pois/new/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                        <navigator url="../me/pois/new/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                             <view class="weui-cell__bd">
                                 <image class="me-avatar" src="../../images/icon/round_add.png" style="width:60rpx;height:60rpx;"></image>
                             </view>
@@ -52,7 +52,7 @@
                         <view class="weui-panel__bd">
                             <view class="weui-media-box weui-media-box_text" wx:for="{{pois}}" wx:key="updated_at">
                                 <view class="weui-media-box__title weui-media-box__title_in-text">
-                                    <navigator url="pois/detail/index?id={{ item.id}}" hover-class="navigator-hover">
+                                    <navigator url="../me/pois/detail/index?id={{ item.id}}" hover-class="navigator-hover">
                                         {{ item.poi_name}}
                                     </navigator>
                                 </view>
