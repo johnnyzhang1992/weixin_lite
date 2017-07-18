@@ -35,7 +35,39 @@ Page({
           }
       })
   },
-
+    deleteBook: function (e) {
+        var that = this;
+        var user_id = wx.getStorageSync('user').user_id;
+        wx.showModal({
+            title: '提示',
+            content: '你确定要删除吗？',
+            success: function(res) {
+                if (res.confirm) {
+                    var book_id = e.currentTarget.dataset.book_id;
+                    wx.request({
+                        url: 'https://johnnyzhang.cn/wxxcx/delete/book',
+                        data: {
+                            book_id: book_id
+                        },
+                        success: function (res) {
+                            if(res.data.msg.msg == 'success'){
+                                wx.showToast({
+                                    title: '删除成功',
+                                    icon: 'success',
+                                    duration: 3000
+                                });
+                                wx.navigateBack({
+                                    delta: 1
+                                })
+                            }
+                        }
+                    })
+                } else if (res.cancel) {
+                    console.log('用户点击取消')
+                }
+            }
+        });
+    },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

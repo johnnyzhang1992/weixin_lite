@@ -4,7 +4,7 @@
         <form bindsubmit="bindFormSubmit">
             <view class="section">
                 <view class="title">标题：</view>
-                <input  maxlength="10" name="title" placeholder="标题" auto-focus />
+                <input  maxlength="20" name="title" placeholder="标题" auto-focus />
             </view>
             <view class="section">
                 <radio-group class="radio-group" bindchange="nameChange">
@@ -54,7 +54,7 @@
             <input  type="hidden" name="user_id" value="{{poi.user_id}}" />
             <view class="section">
                 <view class="title">标题：</view>
-                <input  maxlength="10" name="title" value="{{poi.poi_name}}" auto-focus />
+                <input  maxlength="20" name="title" value="{{poi.poi_name}}" auto-focus />
             </view>
             <view class="section">
                 <radio-group class="radio-group">

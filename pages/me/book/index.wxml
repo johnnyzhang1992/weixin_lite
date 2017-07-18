@@ -21,14 +21,22 @@
             <view class="weui-panel__bd">
                 <view class="weui-media-box weui-media-box_text" wx:for="{{book}}" wx:key="id">
                     <view class="weui-media-box__title weui-media-box__title_in-text">
-                        <navigator url="detail/index?id={{ item.id}}" hover-class="navigator-hover">
-                            <view class="weui-cell__bd">
-                                {{ item.book_name}}
+                        <view class="weui-media-box__info" >
+                            <view class="weui-media-box__info__meta">
+                                <navigator url="detail/index?id={{ item.id}}" hover-class="navigator-hover">
+                                    <view class="weui-cell__bd" style="font-size:16px;line-height:1.2em">
+                                        {{ item.book_name}}
+                                    </view>
+                                </navigator>
                             </view>
-                        </navigator>
-                        <navigator url="detail/index?id={{ item.id}}" hover-class="navigator-hover">
-                            <view class="weui-cell__ft weui-cell__ft_in-access" style="min-width:48px">编辑</view>
-                        </navigator>
+                            <view class="weui-media-box__info__meta">
+                                <view bindtap="deleteBook" data-book_id="{{ item.id}}" hover-class="weui-cell_active">
+                                    <view class="weui-cell__bd"  style="font-size:14px;line-height:1.2em;color:#43ce7b">
+                                        点我删除
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
                     </view>
                     <view class="weui-media-box__desc" wx:if="{{ item.content == NULL}}">暂无简介</view>
                     <view class="weui-media-box__desc" wx:elif="{{ item.content}}">{{ item.content}}</view>
