@@ -1,9 +1,6 @@
 // index.js
 var app = getApp();
 var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
-var _pois = {};
-var _posts = {};
-var _diarys = {};
 var _sildeLeft = 0;
 var _slideOffset = 0;
 Page({
@@ -19,7 +16,7 @@ Page({
       sliderLeft: 0,
       pois: {},
       posts: {},
-      diary: {}
+      diarys: {}
   },
   /**
    * 生命周期函数--监听页面加载
@@ -32,30 +29,14 @@ Page({
               _slideOffset = res.windowWidth / that.data.tabs.length * that.data.activeIndex
           }
       });
-      wx.request({
-          url: 'https://johnnyzhang.cn/wxxcx/get/pois',
-          data: {
-              id: wx.getStorageSync('user').user_id
-          },
-          success: function (resp) {
-              if (resp.data) {
-                  var pois = resp.data;
-                  if(resp.data){
-                      var _data = [];
-                      for(var i =pois.length-1 ;i>=0;i--){
-                          var _obj = {};
-                          _obj = pois[i];
-                          _obj.created_at = app.getDateDiff(pois[i].created_at);
-                          _data.push(_obj);
-                      }
-                      that.setData({
-                          sliderLeft:_sildeLeft,
-                          sliderOffset:_slideOffset,
-                          pois: _data
-                      })
-                  }
-              }
-          }
+      var pois = null;
+      app.func.getPois(function(res){
+          pois = res;
+          that.setData({
+              sliderLeft:_sildeLeft,
+              sliderOffset:_slideOffset,
+              pois: pois
+          });
       });
   },
   tabClick: function (e) {
@@ -69,52 +50,19 @@ Page({
    */
   onReady: function () {
       var that = this;
-      wx.request({
-          url: 'https://johnnyzhang.cn/wxxcx/get/posts',
-          data: {
-              id: wx.getStorageSync('user').user_id
-          },
-          success: function (resp) {
-              if (resp.data) {
-                  var posts = resp.data;
-                  if(resp.data){
-                      var _data = [];
-                      for(var i =posts.length-1 ;i>=0;i--){
-                          var _obj = {};
-                          _obj = posts[i];
-                          _obj.created_at = app.getDateDiff(posts[i].created_at);
-                          _data.push(_obj);
-                      }
-                      that.setData({
-                          posts: _data
-                      })
-                  }
-              }
-          }
+      var posts = null;
+      var diarys = null;
+      app.func.getPosts(function(res){
+          posts = res;
+          app.func.getDiarys(function(res){
+            diarys = res;
+              that.setData({
+                  posts:posts,
+                  diarys:diarys
+              });
+          });
       });
-      wx.request({
-          url: 'https://johnnyzhang.cn/wxxcx/get/diarys',
-          data: {
-              id: wx.getStorageSync('user').user_id
-          },
-          success: function (resp) {
-              if (resp.data) {
-                  var diarys = resp.data;
-                  if(resp.data){
-                      var _data = [];
-                      for(var i =diarys.length-1 ;i>=0;i--){
-                          var _obj = {};
-                          _obj = diarys[i];
-                          _obj.created_at = app.getDateDiff(diarys[i].created_at);
-                          _data.push(_obj);
-                      }
-                      that.setData({
-                          diarys: _data
-                      })
-                  }
-              }
-          }
-      });
+
   },
 
   /**
@@ -143,75 +91,23 @@ Page({
    */
   onPullDownRefresh: function () {
       var that = this;
-      wx.request({
-          url: 'https://johnnyzhang.cn/wxxcx/get/posts',
-          data: {
-              id: wx.getStorageSync('user').user_id
-          },
-          success: function (resp) {
-              if (resp.data) {
-                  var posts = resp.data;
-                  if(resp.data){
-                      var _data = [];
-                      for(var i =posts.length-1 ;i>=0;i--){
-                          var _obj = {};
-                          _obj = posts[i];
-                          _obj.created_at = app.getDateDiff(posts[i].created_at);
-                          _data.push(_obj);
-                      }
-                      that.setData({
-                          posts: _data
-                      })
-                  }
-              }
-          }
-      });
-      wx.request({
-          url: 'https://johnnyzhang.cn/wxxcx/get/diarys',
-          data: {
-              id: wx.getStorageSync('user').user_id
-          },
-          success: function (resp) {
-              if (resp.data) {
-                  var diarys = resp.data;
-                  if(resp.data){
-                      var _data = [];
-                      for(var i =diarys.length-1 ;i>=0;i--){
-                          var _obj = {};
-                          _obj = diarys[i];
-                          _obj.created_at = app.getDateDiff(diarys[i].created_at);
-                          _data.push(_obj);
-                      }
-                      that.setData({
-                          diarys: _data
-                      })
-                  }
-              }
-          }
-      });
-      wx.request({
-          url: 'https://johnnyzhang.cn/wxxcx/get/pois',
-          data: {
-              id: wx.getStorageSync('user').user_id
-          },
-          success: function (resp) {
-              if (resp.data) {
-                  var pois = resp.data;
-                  if(resp.data){
-                      var _data = [];
-                      for(var i =pois.length-1 ;i>=0;i--){
-                          var _obj = {};
-                          _obj = pois[i];
-                          _obj.created_at = app.getDateDiff(pois[i].created_at);
-                          _data.push(_obj);
-                      }
-                      that.setData({
-                          pois: _data
-                      });
-                      wx.stopPullDownRefresh()
-                  }
-              }
-          }
+      var posts = null;
+      var diarys = null;
+      var pois = null;
+      app.func.getPois(function(res){
+          pois = res;
+          app.func.getPosts(function(res){
+              posts = res;
+              app.func.getDiarys(function(res){
+                  diarys = res;
+                  that.setData({
+                      posts:posts,
+                      diarys:diarys,
+                      pois: pois
+                  });
+                  wx.stopPullDownRefresh();
+              });
+          });
       });
   },
 
