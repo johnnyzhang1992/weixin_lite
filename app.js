@@ -191,6 +191,7 @@ App({
     func:{
         getPosts:https.getPosts,
         getDiarys:https.getDiarys,
-        getPois:https.getPois
+        getPois:https.getPois,
+        getBook:https.getBook
     }
 });

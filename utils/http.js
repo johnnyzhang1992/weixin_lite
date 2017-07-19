@@ -122,8 +122,26 @@ function getPois(cb) {
 
 
 }
+function getBook(cb) {
+    wx.request({
+        url: 'https://johnnyzhang.cn/wxxcx/get/book',
+        data: {
+            id : wx.getStorageSync('user').user_id
+        },
+        success: function (res) {
+            if(res.data){
+                var books = res.data;
+                books.forEach(function (p1, p2, p3) {
+                    p1.created_at =getDateDiff(p1.created_at);
+                });
+                return typeof cb == "function" && cb(books.sort(compare('id')));
+            }
+        }
+    });
+}
 module.exports = {
     getPosts:getPosts,
     getDiarys:getDiarys,
-    getPois:getPois
+    getPois:getPois,
+    getBook:getBook
 };

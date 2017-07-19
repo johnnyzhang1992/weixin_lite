@@ -20,20 +20,12 @@ Page({
           title: '页面加载中...',
           mask: true
       });
-    var that = this;
-      wx.request({
-          url: 'https://johnnyzhang.cn/wxxcx/get/book',
-          data: {
-              id : wx.getStorageSync('user').user_id
-          },
-          success: function (res) {
-              if(res.data){
-                  that.setData({
-                      book: res.data
-                  })
-              }
-          }
-      })
+      var that = this;
+      app.func.getBook(function(res){
+          that.setData({
+              book: res
+          })
+      });
   },
 
   /**
@@ -69,20 +61,12 @@ Page({
    */
   onPullDownRefresh: function () {
       var that = this;
-      wx.request({
-          url: 'https://johnnyzhang.cn/wxxcx/get/book',
-          data: {
-              id : wx.getStorageSync('user').user_id
-          },
-          success: function (res) {
-              if(res.data){
-                  that.setData({
-                      book: res.data
-                  });
-                  wx.stopPullDownRefresh()
-              }
-          }
-      })
+      app.func.getBook(function(res){
+          that.setData({
+              book: res
+          });
+          wx.stopPullDownRefresh()
+      });
   },
 
   /**
