@@ -19,7 +19,7 @@ page{
     margin-bottom:10px;
 }
 .page__hd {
-    padding: 40px;
+    padding: 20px;
 }
 .page__bd {
     padding-bottom: 40px;

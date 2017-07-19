@@ -84,7 +84,7 @@
                             <view class="weui-media-box weui-media-box_text" wx:for="{{diarys}}" wx:key="{{ id}}" wx:if="{{item.status=='active'}}">
                                 <view class="weui-media-box__title weui-media-box__title_in-text">
                                     <navigator url="../me/diary/detail/index?id={{ item.id}}" hover-class="navigator-hover">
-                                        {{ item.title}}{{ item.user_id}}
+                                        {{ item.title}}
                                     </navigator>
                                 </view>
                                 <view class="weui-media-box__desc" wx:if="{{ item.description == NULL || item.description == ''}}">暂无简介</view>

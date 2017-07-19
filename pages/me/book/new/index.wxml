@@ -61,7 +61,7 @@
             </view>
             <view class="page__bd page__bd_spacing">
                 <view class="weui-cell__bd">
-                    <button id="bookSave" type="default" bindtap="saveBook" class="weui-btn">保存</button>
+                    <button id="bookSave" type="primary" bindtap="saveBook" class="weui-btn">保存</button>
                 </view>
             </view>
         </view>

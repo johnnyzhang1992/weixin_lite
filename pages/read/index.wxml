@@ -22,6 +22,7 @@
                     <view class="weui-media-box__info" >
                         <view class="weui-media-box__info__meta">{{ item.book_author}}</view>
                         <view class="weui-media-box__info__meta">{{ item.year}}</view>
+                        <view class="weui-media-box__info__meta">添加者：{{ item.user_name}}</view>
                         <view class="weui-media-box__info__meta weui-media-box__info__meta_extra" wx:if="{{ item.status == 'finish'}}">已读完</view>
                         <view class="weui-media-box__info__meta weui-media-box__info__meta_extra" wx:elif="{{ item.status !== 'finish'}}">进行中</view>
                     </view>
