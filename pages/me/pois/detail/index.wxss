@@ -2,9 +2,6 @@
 .page{
     padding-top: 0;
 }
-.page__hd{
-    padding: 20rpx;
-}
 .poi_cover_image{
     width:100%;
 }
@@ -19,4 +16,15 @@
 }
 .poi_address{
     color: #43ce7b;
+}
+.page__hd {
+    padding:15px;
+}
+textarea{
+    min-height:100rpx;
+    width:90%;
+    padding:20rpx 30rpx;
+    border:1px solid #ddd;
+    margin-bottom:30rpx;
+    background-color:#fff ;
 }

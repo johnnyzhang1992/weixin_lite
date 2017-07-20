@@ -72,3 +72,6 @@ textarea{
     margin-bottom:30rpx;
     background-color:#fff ;
 }
+.white-padding{
+    border-bottom: 3px solid #fff;
+}

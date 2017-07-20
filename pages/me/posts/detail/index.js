@@ -189,7 +189,6 @@ Page({
    */
   onReady: function () {
       var that = this;
-      wx.hideLoading();
       var user_id = wx.getStorageSync('user').user_id;
       wx.request({
           url:  'https://johnnyzhang.cn/wxxcx/get/comments',
@@ -211,6 +210,7 @@ Page({
               }
           }
       });
+      wx.hideLoading();
   },
 
   /**

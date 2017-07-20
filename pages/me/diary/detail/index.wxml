@@ -35,13 +35,40 @@
                             {{ diary.content}}
                         </text>
                     </view>
+                    <view class="white-padding"></view>
                     <view class="weui-article__section">
                         <view class="weui-article__h3" style="border-bottom:1px solid #ddd">评论</view>
+                        <view class="weui-article__section" wx:if="{{ comments[0].id }}" wx:for="{{ comments}}" wx:key="{{id}}" wx:for-index="{{ id}}">
+                            <view class="weui-cells weui-cells_after-title">
+                                <view class="weui-cell">
+                                    <view class="weui-cell__bd view-avatar" style="max-width:120rpx">
+                                        <image class="me-avatar" src="{{item.avatar}}" style="width:100rpx;height:100rpx;border-radius:50%"></image>
+                                    </view>
+                                    <view class="weui-cell__bd name">
+                                        <view class="text">{{ item.user_name}}</view>
+                                        <view class="text1">{{ item.created_at}}</view>
+                                    </view>
+                                    <view wx:if="{{ item.user_id == user_id}}" style="margin-top:10rpx">
+                                        <view class="weui-media-box__info" >
+                                            <view class="weui-media-box__info__meta">
+                                                <view bindtap="deleteComment" data-comment_id="{{ item.id}}" data-from="" hover-class="weui-cell_active">
+                                                    <text style="color:#43ce7b">点我删除</text>
+                                                </view>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="weui-article__p section" style="padding:10rpx 30rpx">
+                                    <text>{{ item.content}}</text>
+                                </view>
+                            </view>
+                        </view>
+
                         <form bindsubmit="commentFormSubmit">
                             <input type="hidden" name="type" value="diary"/>
                             <input type="hidden" name="id" value="{{ diary.id}}"/>
                             <view class="weui-article__p section">
-                                <textarea placeholder="请输入内容" name="content"  auto-height/>
+                                <textarea placeholder="请输入内容" name="content"  auto-height />
                             </view>
                             <button form-type="submit" type="primary"> 提交 </button>
                         </form>

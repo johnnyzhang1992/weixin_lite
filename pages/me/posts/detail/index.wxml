@@ -31,6 +31,7 @@
                         </rich-text>
                     </view>
                 </view>
+                <view class="white-padding"></view>
                 <view class="weui-article__section">
                     <view class="weui-article__h3" style="border-bottom:1px solid #ddd">评论</view>
                     <view class="weui-article__section" wx:if="{{ comments[0].id }}" wx:for="{{ comments}}" wx:key="{{id}}" wx:for-index="{{ id}}">
