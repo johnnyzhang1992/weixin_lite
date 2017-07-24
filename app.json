@@ -24,7 +24,9 @@
         "pages/me/manage/index",
         "pages/me/diary/new/index",
         "pages/me/diary/detail/index",
-        "pages/me/diary/index"
+        "pages/me/diary/index",
+        "pages/me/about/index",
+        "pages/me/connect/index"
     ],
     "window": {
         "backgroundTextStyle": "light",

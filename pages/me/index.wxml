@@ -61,4 +61,13 @@
             </navigator>
         </view>
     </view>
+    <view class="page">
+        <view class="weui-footer">
+            <view class="weui-footer__links">
+                <navigator url="about/index" class="weui-footer__link">关于我们</navigator>
+                <navigator url="connect/index" class="weui-footer__link">联系我们</navigator>
+            </view>
+            <view class="weui-footer__text">Copyright © 2016-2017 小小梦工场</view>
+        </view>
+    </view>
 </view>

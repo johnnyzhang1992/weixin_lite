@@ -57,7 +57,6 @@ Page({
      */
     onPullDownRefresh: function () {
         var that = this;
-        console.log(wx.getStorageSync('user').user_name);
         //调用应用实例的方法获取全局数据
         app.getUserInfo(function(userInfo){
             //更新数据
@@ -72,7 +71,6 @@ Page({
             that.setData({
                 userInfo:userInfo
             });
-            console.log(userInfo.nickName);
             wx.stopPullDownRefresh()
         });
     }

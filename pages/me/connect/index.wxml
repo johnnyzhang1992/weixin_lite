@@ -1,0 +1,26 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">联系我们</view>
+        <view class="page__desc">----小小梦工场Lite</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-article">
+            <view class="weui-article__section">
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">用到的技术</view>
+                    <view class="weui-article__p">
+                        <view class="weui-cell">
+                            <view class="weui-cell__bd">微信</view>
+                            <view class="weui-cell__ft">zq19920306</view>
+                        </view>
+                        <view class="weui-cell">
+                            <view class="weui-cell__bd">邮箱</view>
+                            <view class="weui-cell__ft">me@johnnyzhang.cn</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+

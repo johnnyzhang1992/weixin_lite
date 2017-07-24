@@ -1,0 +1,61 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">关于我们</view>
+        <view class="page__desc">----小小梦工场Lite</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-article">
+            <view class="weui-article__h1">关于小程序</view>
+            <view class="weui-article__section">
+                <!--<view class="weui-article__title">目的</view>-->
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">1.1 目的</view>
+                    <view class="weui-article__p">
+                        此小程序是作为网站 <a href="https://johnnyzhang.cn">小小梦工场</a>的拓展。
+                    </view>
+                    <view class="weui-article__p">
+                        方便在移动端（微信内），更新内容，记录生活。
+                    </view>
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">1.2 用到的技术</view>
+                    <view class="weui-article__p">
+                        <view class="weui-cell">
+                            <view class="weui-cell__bd">UI框架: </view>
+                            <view class="weui-cell__ft">WEUI</view>
+                        </view>
+                        <view class="weui-cell">
+                            <view class="weui-cell__bd">编辑器:</view>
+                            <view class="weui-cell__ft">phpstorm</view>
+                        </view>
+                        <view class="weui-cell">
+                            <view class="weui-cell__bd">后台框架:</view>
+                            <view class="weui-cell__ft">laravel</view>
+                        </view>
+                        <view class="weui-cell">
+                            <view class="weui-cell__bd">后台语言:</view>
+                            <view class="weui-cell__ft">PHP</view>
+                        </view>
+                        <view class="weui-cell">
+                            <view class="weui-cell__bd">数据库:</view>
+                            <view class="weui-cell__ft">PostgreSQL</view>
+                        </view>
+                        <view class="weui-cell">
+                            <view class="weui-cell__bd">服务器:</view>
+                            <view class="weui-cell__ft">阿里云ECS(ubuntu)</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">1.2 获取你的哪些信息？</view>
+                    <view class="weui-article__p">
+                        1.你的头像，昵称，性别，城市，语言等（获取前需要您的同意）
+                    </view>
+                    <view class="weui-article__p">
+                        2.你的微信运动数据（获取前需要您的同意）
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
