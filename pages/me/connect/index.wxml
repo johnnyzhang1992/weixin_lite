@@ -7,7 +7,7 @@
         <view class="weui-article">
             <view class="weui-article__section">
                 <view class="weui-article__section">
-                    <view class="weui-article__h3">用到的技术</view>
+                    <view class="weui-article__h3">联系方式</view>
                     <view class="weui-article__p">
                         <view class="weui-cell">
                             <view class="weui-cell__bd">微信</view>
