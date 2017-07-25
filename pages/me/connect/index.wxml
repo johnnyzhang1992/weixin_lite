@@ -1,7 +1,7 @@
 <view class="page">
     <view class="page__hd">
         <view class="page__title">联系我们</view>
-        <view class="page__desc">----小小梦工场Lite</view>
+        <!--<view class="page__desc">&#45;&#45;&#45;&#45;小小梦工场Lite</view>-->
     </view>
     <view class="page__bd">
         <view class="weui-article">
