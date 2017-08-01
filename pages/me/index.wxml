@@ -2,9 +2,9 @@
 <view class="page">
     <view class="page__bd">
         <view class="weui-cells weui-cells_after-title">
-            <navigator url="set/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <navigator url="set/index" class="weui-cell weui-cell_access" wx:if="{{user_id>0}}">
                 <view class="weui-cell__bd view-avatar">
-                    <image class="me-avatar" src="{{userInfo.avatarUrl}}"></image>
+                    <image class="me-avatar" src="{{userInfo.avatarUrl ? userInfo.avatarUrl : '../../images/icon/people.png' }}"></image>
                 </view>
                 <view class="weui-cell__bd name">
                     <text class="text">{{ userInfo.nickName}}</text>
@@ -13,6 +13,16 @@
                 </view>
                 <view class="weui-cell__ft weui-cell__ft_in-access"></view>
             </navigator>
+            <view  bindtap="AuthSetting" class="weui-cell weui-cell_access" wx:elif="{{ !user_id}}">
+                <view class="weui-cell__bd view-avatar">
+                    <image class="me-avatar" src="{{ '../../images/icon/people.png' }}"></image>
+                </view>
+                <view class="weui-cell__bd name">
+                    <text class="text">你的昵称</text>
+                    <text class="text1">登录或重新授权</text>
+                </view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </view>
         </view>
     </view>
     <view class="page__bd">

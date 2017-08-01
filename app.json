@@ -47,7 +47,7 @@
             },
             {
                 "pagePath": "pages/record/index",
-                "text": "记事",
+                "text": "攻略",
                 "iconPath": "images/icon/edit_light.png",
                 "selectedIconPath": "images/icon/edit_light_active.png"
             },

@@ -17,7 +17,7 @@
                             <view class="weui-cell__bd">
                                 <image class="me-avatar" src="../../images/icon/round_add.png" style="width:60rpx;height:60rpx;"></image>
                             </view>
-                            <view class="weui-cell__ft weui-cell__ft_in-access" style="min-width:48px">新增</view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access" style="min-width:48px">new</view>
                         </navigator>
                     </view>
                     <view class="weui-panel">
@@ -54,7 +54,7 @@
                             <view class="weui-cell__bd">
                                 <image class="me-avatar" src="../../images/icon/round_add.png" style="width:60rpx;height:60rpx;"></image>
                             </view>
-                            <view class="weui-cell__ft weui-cell__ft_in-access" style="min-width:48px">新增</view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access" style="min-width:48px">new</view>
                         </navigator>
                     </view>
                     <view class="weui-panel">
@@ -94,7 +94,7 @@
                             <view class="weui-cell__bd">
                                 <image class="me-avatar" src="../../images/icon/round_add.png" style="width:60rpx;height:60rpx;"></image>
                             </view>
-                            <view class="weui-cell__ft weui-cell__ft_in-access" style="min-width:48px">新增</view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access" style="min-width:48px">new</view>
                         </navigator>
                     </view>
                     <view class="weui-panel">

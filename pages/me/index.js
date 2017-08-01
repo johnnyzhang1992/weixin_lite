@@ -70,7 +70,26 @@ Page({
           })
       });
   },
-
+    AuthSetting: function () {
+      console.log('-------');
+        // 可以通过 wx.getSetting 先查询一下用户是否授权了 "scope.record" 这个 scope
+        wx.getSetting({
+            success:function(res) {
+                if (!res.authSetting['scope.userInfo']) {
+                    wx.authorize({
+                        scope: 'scope.userInfo',
+                        success: function(res) {
+                            console.log(res);
+                            // wx.startRecord()
+                        },
+                        fail: function (msg) {
+                            console.log(msg)
+                        }
+                    })
+                }
+            }
+        })
+    },
   /**
    * 生命周期函数--监听页面显示
    */
