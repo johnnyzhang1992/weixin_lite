@@ -26,7 +26,7 @@ Page({
             posts = res;
             var user_info = null;
             __obj = __obj.concat(posts);
-            app.func.getBook(function(res){
+            app.func.getPois(function(res){
                 __obj = __obj.concat(res);
                 //调用应用实例的方法获取全局数据
                 app.getUserInfo(function(userInfo){
@@ -54,7 +54,7 @@ Page({
             posts = res;
             var user_info = null;
             __obj = __obj.concat(posts);
-            app.func.getBook(function(res){
+            app.func.getPois(function(res){
                 __obj = __obj.concat(res);
                 //调用应用实例的方法获取全局数据
                 app.getUserInfo(function(userInfo){

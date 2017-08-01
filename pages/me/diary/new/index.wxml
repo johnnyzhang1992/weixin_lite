@@ -36,7 +36,7 @@
                 <input  maxlength="20" name="title" value="{{diary.title}}" auto-focus />
             </view>
             <view class="section">
-                <radio-group class="radio-group">
+                <radio-group class="radio-group"  bindchange="nameChange">
                     <label class="radio" wx:for="{{items}}" wx:key="name">
                         <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
                     </label>

@@ -22,6 +22,15 @@
                     </view>
                     <view class="weui-panel">
                         <view class="weui-panel__bd">
+                            <view class="weui-media-box weui-media-box_text">
+                                <view class="weui-media-box__title weui-media-box__title_in-text">
+                                    记录旅行中发生的故事
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="weui-panel">
+                        <view class="weui-panel__bd">
                             <view class="weui-media-box weui-media-box_text" wx:for="{{posts}}" wx:key="updated_at" wx:if="{{ item.status == 0 }}">
                                 <view class="weui-media-box__title weui-media-box__title_in-text">
                                     <navigator url="../me/posts/detail/index?id={{ item.id}}" hover-class="navigator-hover">
@@ -47,6 +56,15 @@
                             </view>
                             <view class="weui-cell__ft weui-cell__ft_in-access" style="min-width:48px">新增</view>
                         </navigator>
+                    </view>
+                    <view class="weui-panel">
+                        <view class="weui-panel__bd">
+                            <view class="weui-media-box weui-media-box_text">
+                                <view class="weui-media-box__title weui-media-box__title_in-text">
+                                    记录那些曾经去过的地方
+                                </view>
+                            </view>
+                        </view>
                     </view>
                     <view class="weui-panel">
                         <view class="weui-panel__bd">
@@ -78,6 +96,15 @@
                             </view>
                             <view class="weui-cell__ft weui-cell__ft_in-access" style="min-width:48px">新增</view>
                         </navigator>
+                    </view>
+                    <view class="weui-panel">
+                        <view class="weui-panel__bd">
+                            <view class="weui-media-box weui-media-box_text">
+                                <view class="weui-media-box__title weui-media-box__title_in-text">
+                                    记录旅行中的行程和花费
+                                </view>
+                            </view>
+                        </view>
                     </view>
                     <view class="weui-panel">
                         <view class="weui-panel__bd" wx:if="{{ diarys.length>=1}}">

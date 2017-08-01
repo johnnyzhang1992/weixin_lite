@@ -46,12 +46,6 @@
                 "selectedIconPath": "images/icon/apps_active.png"
             },
             {
-                "pagePath": "pages/read/index",
-                "text": "阅读",
-                "iconPath": "images/icon/read.png",
-                "selectedIconPath": "images/icon/read_active.png"
-            },
-            {
                 "pagePath": "pages/record/index",
                 "text": "记事",
                 "iconPath": "images/icon/edit_light.png",

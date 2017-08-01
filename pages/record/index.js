@@ -10,7 +10,7 @@ Page({
    */
 
   data: {
-      tabs: ["故事", "游记", "日记"],
+      tabs: ["故事", "游记", "日迹"],
       activeIndex: 1,
       sliderOffset: 0,
       sliderLeft: 0,
