@@ -20,6 +20,12 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  previewImage: function(e){
+      wx.previewImage({
+          current: e.currentTarget.id, // 当前显示图片的http链接
+          urls: this.data.files // 需要预览的图片http链接列表
+      })
+  },
   onLoad: function (options) {
       _id = options.id;
       wx.showLoading({
@@ -39,7 +45,7 @@ Page({
           success: function (res) {
               if(res.data){
                   var poi = res.data[0];
-                  if(poi.cover_image){
+                  if(! /^https/.test(poi.cover_image) && poi.cover_image){
                       poi.cover_image = 'https://johnnyzhang.cn/'+poi.cover_image
                   }
                   wx.setNavigationBarTitle({

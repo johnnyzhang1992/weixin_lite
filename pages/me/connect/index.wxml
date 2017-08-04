@@ -13,10 +13,10 @@
                             <view class="weui-cell__bd">微信</view>
                             <view class="weui-cell__ft">zq19920306</view>
                         </view>
-                        <view class="weui-cell">
-                            <view class="weui-cell__bd">邮箱</view>
-                            <view class="weui-cell__ft">me@johnnyzhang.cn</view>
-                        </view>
+                        <!--<view class="weui-cell">-->
+                            <!--<view class="weui-cell__bd">邮箱</view>-->
+                            <!--<view class="weui-cell__ft">me@johnnyzhang.cn</view>-->
+                        <!--</view>-->
                     </view>
                 </view>
             </view>

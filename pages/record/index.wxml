@@ -22,8 +22,8 @@
                     </view>
                     <view class="weui-panel">
                         <view class="weui-panel__bd">
-                            <view class="weui-media-box weui-media-box_text">
-                                <view class="weui-media-box__title weui-media-box__title_in-text">
+                            <view class="weui-media-box weui-media-box_text" style="padding:8px 15px">
+                                <view class="weui-media-box__title weui-media-box__title_in-text" style="margin-bottom:0">
                                     记录旅行中发生的故事
                                 </view>
                             </view>
@@ -59,8 +59,8 @@
                     </view>
                     <view class="weui-panel">
                         <view class="weui-panel__bd">
-                            <view class="weui-media-box weui-media-box_text">
-                                <view class="weui-media-box__title weui-media-box__title_in-text">
+                            <view class="weui-media-box weui-media-box_text" style="padding:8px 15px">
+                                <view class="weui-media-box__title weui-media-box__title_in-text" style="margin-bottom:0">
                                     记录那些曾经去过的地方
                                 </view>
                             </view>
@@ -99,8 +99,8 @@
                     </view>
                     <view class="weui-panel">
                         <view class="weui-panel__bd">
-                            <view class="weui-media-box weui-media-box_text">
-                                <view class="weui-media-box__title weui-media-box__title_in-text">
+                            <view class="weui-media-box weui-media-box_text" style="padding:8px 15px">
+                                <view class="weui-media-box__title weui-media-box__title_in-text" style="margin-bottom:0">
                                     记录旅行中的行程和花费
                                 </view>
                             </view>

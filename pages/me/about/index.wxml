@@ -44,6 +44,10 @@
                             <view class="weui-cell__bd">服务器:</view>
                             <view class="weui-cell__ft">阿里云ECS(ubuntu)</view>
                         </view>
+                        <view class="weui-cell">
+                            <view class="weui-cell__bd">文件存储:</view>
+                            <view class="weui-cell__ft">七牛</view>
+                        </view>
                     </view>
                 </view>
                 <view class="weui-article__section">
