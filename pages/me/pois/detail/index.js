@@ -45,7 +45,7 @@ Page({
           success: function (res) {
               if(res.data){
                   var poi = res.data[0];
-                  if(! /^https/.test(poi.cover_image) && poi.cover_image){
+                  if(! /^http/.test(poi.cover_image) && poi.cover_image){
                       poi.cover_image = 'https://johnnyzhang.cn/'+poi.cover_image
                   }
                   wx.setNavigationBarTitle({

@@ -104,7 +104,7 @@ Page({
                       wx.setNavigationBarTitle({
                           title: poi.poi_name
                       });
-                      if(! /^https/.test(poi.cover_image) && poi.cover_image){
+                      if(! /^http/.test(poi.cover_image) && poi.cover_image){
                           poi.cover_image = 'https://johnnyzhang.cn/'+poi.cover_image
                       }
                       if(poi.status == 'active'){
@@ -324,7 +324,7 @@ Page({
                     },
                     {
                         region: 'ECN',
-                        domain: 'https://assets.johnnyzhang.cn',//下载时用到
+                        domain: 'http://assets.johnnyzhang.cn',//下载时用到
                         key: 'poi/'+poi_id+'/'+Math.ceil(Math.random()*100)+'_cover_image.jpg',
                         // 以下方法三选一即可，优先级为：uptoken > uptokenURL > uptokenFunc
                         // uptoken: '[yourTokenString]', // 由其他程序生成七牛 uptoken
